@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locationIcons xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locationIcons.xsd">
+	<rootDir>icons</rootDir>
+	<locationIcon>
+		<description>Stationi ARAPV</description>
+		<iconId>rain.png</iconId>
+		<locationSetId>arpav_stations</locationSetId>
+	</locationIcon>
+	<locationIcon>
+		<description>Canali LEB</description>
+		<iconId>flowgauge</iconId>
+		<locationSetId>canali</locationSetId>
+	</locationIcon>
+	<locationIcon>
+		<description>Derivazioni</description>
+		<iconId>waterquality.gif</iconId>
+		<locationSetId>derivazioni</locationSetId>
+	</locationIcon>
+	<locationIcon>
+		<description>Distretti</description>
+		<iconId>catchment_centre_point_data</iconId>
+		<locationSetId>centroidi_distretti</locationSetId>
+	</locationIcon>
+</locationIcons>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>Tin</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Station</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Tmin.obs</parameterId>
+			<locationSetId>arpav_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-33" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TempTemper</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Interpolate_Temper</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Tmin.obs</parameterId>
+			<locationSetId>arpav_stations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-33" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="hour" multiplier="1"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tgrid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Interpolate_Temper</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Tmin.obs</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-33" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tground</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Interpolate_Temper</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TAmin</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-33" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tin2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Station</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Tmax.obs</parameterId>
+			<locationSetId>arpav_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-33" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TempTemper2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Interpolate_Temper</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Tmax.obs</parameterId>
+			<locationSetId>arpav_stations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-33" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="hour" multiplier="1"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tgrid2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Interpolate_Temper</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Tmax.obs</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-33" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tground2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Interpolate_Temper</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TAmax</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-33" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations Tmin-->
+	<transformation id="TLapse">
+		<altitude>
+			<elevationLapse>
+				<inputTemperature>
+					<variableId>Tin</variableId>
+				</inputTemperature>
+				<coefficientSet>
+					<temperatureLapseRate>0.45</temperatureLapseRate>
+					<outputElevation>0</outputElevation>
+				</coefficientSet>
+				<outputTemperature>
+					<variableId>TempTemper</variableId>
+				</outputTemperature>
+			</elevationLapse>
+		</altitude>
+ 	</transformation>
+	<transformation id="TLinear">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>TempTemper</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>TempTemper</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="TExtrapolate">
+		<interpolationSerial>
+			<extrapolateConstant>
+				<inputVariable>
+					<variableId>TempTemper</variableId>
+				</inputVariable>
+				<extrapolateDirection>both</extrapolateDirection>
+				<outputVariable>
+					<variableId>TempTemper</variableId>
+				</outputVariable>
+			</extrapolateConstant>
+		</interpolationSerial>
+	</transformation>	
+	<transformation id="TSpatial">
+		<interpolationSpatial>
+			 <inverseDistance>
+				 <inputVariable>
+					 <variableId>TempTemper</variableId>
+				 </inputVariable>
+				<!--includeMissingValues>false</includeMissingValues-->
+				<searchRadius>100000</searchRadius>
+				<distanceGeoDatum>EPSG:3003</distanceGeoDatum>
+				<inverseDistancePower>2</inverseDistancePower>
+				<numberOfPoints>14</numberOfPoints>
+				 <outputVariable>
+					 <variableId>TempTemper</variableId>
+				 </outputVariable>
+			 </inverseDistance>
+		</interpolationSpatial>
+ 	</transformation>	
+	<transformation id="TSpatialGrid">
+		<interpolationSpatial>
+			 <inverseDistance>
+				 <inputVariable>
+					 <variableId>TempTemper</variableId>
+				 </inputVariable>
+				<!--includeMissingValues>false</includeMissingValues-->
+				<searchRadius>100000</searchRadius>
+				<distanceGeoDatum>EPSG:3003</distanceGeoDatum>
+				<inverseDistancePower>2</inverseDistancePower>
+				<numberOfPoints>14</numberOfPoints>
+				 <outputVariable>
+					 <variableId>Tgrid</variableId>
+				 </outputVariable>
+			 </inverseDistance>
+		</interpolationSpatial>
+ 	</transformation>	
+	<transformation id="TGround">
+		<altitude>
+			<elevationLapse>
+				<inputTemperature>
+					<variableId>Tgrid</variableId>
+				</inputTemperature>
+				<coefficientSet>
+					<temperatureLapseRate>0.45</temperatureLapseRate>
+					<inputElevation>0</inputElevation>
+				</coefficientSet>
+				<outputTemperature>
+					<variableId>Tground</variableId>
+				</outputTemperature>
+			</elevationLapse>
+		</altitude>
+ 	</transformation>
+	<!--Transformations Tmax-->
+		<transformation id="TLapse2">
+		<altitude>
+			<elevationLapse>
+				<inputTemperature>
+					<variableId>Tin2</variableId>
+				</inputTemperature>
+				<coefficientSet>
+					<temperatureLapseRate>0.45</temperatureLapseRate>
+					<outputElevation>0</outputElevation>
+				</coefficientSet>
+				<outputTemperature>
+					<variableId>TempTemper2</variableId>
+				</outputTemperature>
+			</elevationLapse>
+		</altitude>
+ 	</transformation>
+	<transformation id="TLinear2">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>TempTemper2</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>TempTemper2</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="TExtrapolate2">
+		<interpolationSerial>
+			<extrapolateConstant>
+				<inputVariable>
+					<variableId>TempTemper2</variableId>
+				</inputVariable>
+				<extrapolateDirection>both</extrapolateDirection>
+				<outputVariable>
+					<variableId>TempTemper2</variableId>
+				</outputVariable>
+			</extrapolateConstant>
+		</interpolationSerial>
+	</transformation>	
+	<transformation id="TSpatial2">
+		<interpolationSpatial>
+			 <inverseDistance>
+				 <inputVariable>
+					 <variableId>TempTemper2</variableId>
+				 </inputVariable>
+				<includeMissingValues>false</includeMissingValues>
+				<searchRadius>100000</searchRadius>
+				<distanceGeoDatum>EPSG:3003</distanceGeoDatum>
+				<inverseDistancePower>2</inverseDistancePower>
+				<numberOfPoints>14</numberOfPoints>
+				<!--excludePointOfOrigin>true</excludePointOfOrigin-->
+				 <outputVariable>
+					 <variableId>TempTemper2</variableId>
+				 </outputVariable>
+			 </inverseDistance>
+		</interpolationSpatial>
+ 	</transformation>	
+	<transformation id="TSpatialGrid2">
+		<interpolationSpatial>
+			 <inverseDistance>
+				 <inputVariable>
+					 <variableId>TempTemper2</variableId>
+				 </inputVariable>
+				<includeMissingValues>false</includeMissingValues>
+				<searchRadius>100000</searchRadius>
+				<distanceGeoDatum>EPSG:3003</distanceGeoDatum>
+				<inverseDistancePower>2</inverseDistancePower>
+				<numberOfPoints>14</numberOfPoints>
+				<!--excludePointOfOrigin>true</excludePointOfOrigin-->
+				 <outputVariable>
+					 <variableId>Tgrid2</variableId>
+				 </outputVariable>
+			 </inverseDistance>
+		</interpolationSpatial>
+ 	</transformation>	
+	<transformation id="TGround2">
+		<altitude>
+			<elevationLapse>
+				<inputTemperature>
+					<variableId>Tgrid2</variableId>
+				</inputTemperature>
+				<coefficientSet>
+					<temperatureLapseRate>0.45</temperatureLapseRate>
+					<inputElevation>0</inputElevation>
+				</coefficientSet>
+				<outputTemperature>
+					<variableId>Tground2</variableId>
+				</outputTemperature>
+			</elevationLapse>
+		</altitude>
+ 	</transformation>
+</transformationModule>

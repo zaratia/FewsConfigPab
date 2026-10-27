@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
+	<!--Import & Process workflows-->
+	<workflowDescriptor id="Import_Forecasts" name="Import meteo forecasts" visible="true" forecast="false" autoApprove="false" allowApprove="false">
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="6"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="Import_EarthObservation" name="Import earth observations" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_External" name="Import observations" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_NETCDF" name="Import NETCDF" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_ECMWF_grib" name="Import ECMWF grib" visible="true" forecast="false" autoApprove="false" allowApprove="false">
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="6"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="Export_NETCDF" name="Export NETCDF timeseries" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Export_grids_NETCDF" name="Export NETCDF grids" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_NETCDF_timeseries" name="Import NETCDF timeseries" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Import_CSV_timeseries" name="Import CSV timeseries" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+
+	<workflowDescriptor id="Import_Basin_NETCDF" name="Import Basin NETCDF" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	
+	<!--Process dexriptors Descriptors -->
+	<workflowDescriptor id="Interpolate_Precip" name="Interpolate precipitation" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Interpolate_Temper" name="Interpolate temperature" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="Process_Forecast" name="Process IrriWeb forecast" visible="true" forecast="true" autoApprove="false" allowApprove="false"/>
+	
+	<!--Model Run Workflow Descriptors -->	
+	<workflowDescriptor id="Run_Spyictop_Historic" name="Run spyic-top (Historical)" visible="true" forecast="true">
+		<description>Run_Spyictop_Historic</description>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunIrriwebForecast" name="Run Irriweb (Forecast)" visible="true" forecast="true">
+		<description>RunIrriwebForecast</description>
+	</workflowDescriptor>
+
+	<rootNode>
+		<node name="Import">
+			<workflowId>Import_Forecasts</workflowId>
+			<workflowId>Import_External</workflowId>
+			<workflowId>Import_NETCDF_timeseries</workflowId>
+			<workflowId>Import_CSV_timeseries</workflowId>
+			<workflowId>Import_NETCDF</workflowId>
+			<workflowId>Import_ECMWF_grib</workflowId>
+			<workflowId>Import_Basin_NETCDF</workflowId>
+		</node>
+		<node name="Export">
+			<workflowId>Export_NETCDF</workflowId>
+			<workflowId>Export_grids_NETCDF</workflowId>
+		</node>
+		<node name="Process">
+			<workflowId>Interpolate_Precip</workflowId>
+			<workflowId>Interpolate_Temper</workflowId>
+			<workflowId>Process_Forecast</workflowId>
+		</node>
+		<node name="Spyic-Top">
+			<workflowId>Run_Spyictop_Historic</workflowId>
+			<workflowId>RunIrriwebForecast</workflowId>
+		</node>
+	</rootNode>
+</workflowDescriptors>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>Prec_grid_ECMWF</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--variable>
+		<variableId>Prec_grid_ECMWF_det</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+			<ensembleMemberId>0</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Prec_centroids_ECMWF_det</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ECMWFtoCentroids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.det.forecast</parameterId>
+			<locationSetId>centroidi_distretti</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Prec_centroids_ECMWF_det_acc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ECMWFtoCentroids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.det.forecast</parameterId>
+			<locationSetId>centroidi_distretti</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable-->
+	<variable>
+		<variableId>Pmon_grid_ECMWF</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="month" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Prec50_grid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ECMWFtoCentroids</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P50.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="month" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Prec25_grid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ECMWFtoCentroids</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P25.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="month" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Prec75_grid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ECMWFtoCentroids</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P75.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="month" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Prec50_centroids</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ECMWFtoCentroids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P50.forecast</parameterId>
+			<locationSetId>centroidi_distretti</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="month" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Prec25_centroids</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ECMWFtoCentroids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P25.forecast</parameterId>
+			<locationSetId>centroidi_distretti</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="month" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Prec75_centroids</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ECMWFtoCentroids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P75.forecast</parameterId>
+			<locationSetId>centroidi_distretti</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="month" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	
+	<!--Transformations-->
+	<transformation id="AggregationMonthP">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Prec_grid_ECMWF</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Pmon_grid_ECMWF</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	
+	<transformation id="statistics ensemble median">
+		<statisticsEnsemble>
+            <percentileNonExceedence>
+                <inputVariable>
+                    <variableId>Pmon_grid_ECMWF</variableId>
+                </inputVariable>
+				<value>
+				50
+				</value>
+                <outputVariable>
+                    <variableId>Prec50_grid</variableId>
+                </outputVariable>
+            </percentileNonExceedence>
+        </statisticsEnsemble>
+    </transformation>	
+	<transformation id="statistics ensemble 25">
+		<statisticsEnsemble>
+            <percentileNonExceedence>
+                <inputVariable>
+                    <variableId>Pmon_grid_ECMWF</variableId>
+                </inputVariable>
+				<value>25</value>
+                <outputVariable>
+                    <variableId>Prec25_grid</variableId>
+                </outputVariable>
+            </percentileNonExceedence>
+        </statisticsEnsemble>
+    </transformation>	
+	<transformation id="statistics ensemble 75">
+		<statisticsEnsemble>
+            <percentileNonExceedence>
+                <inputVariable>
+                    <variableId>Pmon_grid_ECMWF</variableId>
+                </inputVariable>
+				<value>
+				75
+				</value>
+                <outputVariable>
+                    <variableId>Prec75_grid</variableId>
+                </outputVariable>
+            </percentileNonExceedence>
+        </statisticsEnsemble>
+    </transformation>	
+	<transformation id="P50_interpolate_to_centroids">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Prec50_grid</variableId>
+				</inputVariable>				
+				<outputVariable>
+					<variableId>Prec50_centroids</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>	
+	<transformation id="P25_interpolate_to_centroids">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Prec25_grid</variableId>
+				</inputVariable>				
+				<outputVariable>
+					<variableId>Prec25_centroids</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>	
+	<transformation id="P75_interpolate_to_centroids">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Prec75_grid</variableId>
+				</inputVariable>				
+				<outputVariable>
+					<variableId>Prec75_centroids</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>	
+	
+	<!-- Accumulate deterministic ECMWF precipitation, but this is already made by the model-->
+	<!--transformation id="Aggregate ECMWF det rainfall forecast to centroids">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Prec_grid_ECMWF_det</variableId>
+				</inputVariable>				
+				<outputVariable>
+					<variableId>Prec_centroids_ECMWF_det</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>	
+	<transformation id="Accumulate ECMWF det rainfall forecast">
+		<accumulation>
+			<sum>
+				<inputVariable>
+					<variableId>Prec_centroids_ECMWF_det</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Prec_centroids_ECMWF_det_acc</variableId>
+				</outputVariable>
+			</sum>
+		</accumulation>
+	</transformation-->	
+	
+</transformationModule>

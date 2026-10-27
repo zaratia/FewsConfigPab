@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thresholdWarningLevels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholdWarningLevels.xsd">
+	<!--thresholdWarningLevel id="0" name="No threshold exceeded">
+		<color>green</color>
+		<iconName>catchment_centre_point_data.gif</iconName>
+		<historicOverlayIconName>catchment_centre_point_data.gif</historicOverlayIconName>
+		<forecastOverlayIconName>catchment_centre_point_data.gif</forecastOverlayIconName>
+	</thresholdWarningLevel-->
+	<thresholdWarningLevel id="2" name="Storage is Low">
+		<color>red</color>
+		<iconName>warninglevel2.gif</iconName>
+		<historicOverlayIconName>historicwarninglevel4.gif</historicOverlayIconName>
+		<forecastOverlayIconName>forecastwarninglevel2.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+	<thresholdWarningLevel id="1" name="Storage is Med">
+		<color>red</color>
+		<iconName>warninglevel2.gif</iconName>
+		<historicOverlayIconName>historicwarninglevel4.gif</historicOverlayIconName>
+		<forecastOverlayIconName>forecastwarninglevel2.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+</thresholdWarningLevels>

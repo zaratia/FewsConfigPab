@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locations version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locations.xsd">
+	<geoDatum>WGS 1984</geoDatum>
+	<!--Grid definitions -->
+	<location id="IMERG_world" name="IMerge Rainfall">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="IMERG" name="IMerge Rainfall">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="GFS_world" name="GFS Forecast">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="GFS" name="GFS Forecast">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="LEB500" name="Griglia LEB">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="LEBDEM" name="DEM LEB">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="BZDEMTOPO60" name="DEM BZ Topology 60">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="ECMWF" name="ECMWF">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="ECMWF2x2" name="ECMWF2x2">
+		<x>0</x>
+		<y>0</y>
+	</location>
+</locations>

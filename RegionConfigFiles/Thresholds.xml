@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thresholdGroups xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholds.xsd">
+	<eventExpiryTime unit="day" multiplier="1"/>
+	<maxActionEventDuration unit="day" multiplier="60"/>
+	<thresholdGroup id="Storage Thresholds" name="Storage Thresholds">
+		<defaultThreshold shortName="Storage Thresholds"/>
+		<levelThreshold id="Storage_Low" name="Storage_Low" shortName="Storage_Low">
+			<downWarningLevelId>2</downWarningLevelId>
+		</levelThreshold>
+		<!--levelThreshold id="Storage_High" name="Storage_High" shortName="Storage_high">
+			<downWarningLevelId>0</downWarningLevelId>
+		</levelThreshold-->
+		<levelThreshold id="Storage_Med" name="Storage_Med" shortName="Storage_Med">
+			<downWarningLevelId>1</downWarningLevelId>
+		</levelThreshold>
+	</thresholdGroup>
+</thresholdGroups>

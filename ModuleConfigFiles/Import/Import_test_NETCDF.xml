@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NetcdfGridDataset</importType>
+			<folder>$IMPORT_FOLDER$/NETCDF</folder>
+			<!--fileNameObservationDateTimePattern>'3B-HHR-E.MS.MRG.3IMERG.'yyyyMMdd'-S'HHmmss'-E?'</fileNameObservationDateTimePattern-->
+			<fileNamePatternFilter>out_E0.nc</fileNamePatternFilter>
+			<failedFolder>$IMPORT_FAILED_FOLDER$</failedFolder>
+			<backupFolder>$IMPORT_BACKUP_FOLDER$</backupFolder>
+			<idMapId>IdImportNETCDF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<!--importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone-->
+			<!--dataFeedId>GPM_IMERG</dataFeedId-->
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_test_NETCDF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PET.sim</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="PET.sim" cumulativeSum="false" unit="mm"/>
+	</import>
+</timeSeriesImportRun>

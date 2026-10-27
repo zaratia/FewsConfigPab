@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>Prec_grid_ECMWF</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Prec_grid_LEB</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	
+	<variable>
+		<variableId>Tmax_grid_ECMWF</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Tmax.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmax_grid_LEB</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Tmax.forecast</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	
+	<variable>
+		<variableId>Tmin_grid_ECMWF</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Tmin.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmin_grid_LEB</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Tmin.forecast</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="180" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	
+	<!--Transformations-->
+	
+	<transformation id="P_interpolate_to_LEB500">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Prec_grid_ECMWF</variableId>
+				</inputVariable>				
+				<outputVariable>
+					<variableId>Prec_grid_LEB</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>	
+	<transformation id="Tmax_interpolate_to_LEB500">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Tmax_grid_ECMWF</variableId>
+				</inputVariable>				
+				<outputVariable>
+					<variableId>Tmax_grid_LEB</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>		
+	<transformation id="Tmin_interpolate_to_LEB500">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Tmin_grid_ECMWF</variableId>
+				</inputVariable>				
+				<outputVariable>
+					<variableId>Tmin_grid_LEB</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>	
+	
+</transformationModule>

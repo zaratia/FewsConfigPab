@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Delft FEWS Po-->
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	
+	<!-- basins simulated-->
+    <parameter internal="intercept.obs" external="intercept"/>
+    <parameter internal="slope.obs" external="slope"/>
+    <parameter internal="P.obs" external="tp"/>
+
+	<!-- gradients-->
+	<location internal="GRA_1" external="1"/>
+
+	<!-- basins-->
+	<location internal="CEN_1" external="1"/>
+	<location internal="CEN_2" external="2"/>
+	<location internal="CEN_3" external="3"/>
+	<location internal="CEN_4" external="4"/>
+	<location internal="CEN_6" external="6"/>
+	<location internal="CEN_7" external="7"/>
+	<location internal="CEN_8" external="8"/>
+	<location internal="CEN_9" external="9"/>
+	<location internal="CEN_10" external="10"/>
+	<location internal="CEN_11" external="11"/>
+	<location internal="CEN_12" external="12"/>
+	<location internal="CEN_13" external="13"/>
+	<location internal="CEN_14" external="14"/>
+	<location internal="CEN_15" external="15"/>
+	<location internal="CEN_19" external="19"/>
+	<location internal="CEN_20" external="20"/>
+	<location internal="CEN_21" external="21"/>
+	<location internal="CEN_22" external="22"/>
+	<location internal="CEN_25" external="25"/>
+	<location internal="CEN_26" external="26"/>
+	<location internal="CEN_27" external="27"/>
+	<location internal="CEN_29" external="29"/>
+	<location internal="CEN_30" external="30"/>
+	<location internal="CEN_31" external="31"/>
+	<location internal="CEN_32" external="32"/>
+	<location internal="CEN_33" external="33"/>
+	<location internal="CEN_34" external="34"/>
+	<location internal="CEN_35" external="35"/>
+	<location internal="CEN_36" external="36"/>
+	<location internal="CEN_37" external="37"/>
+	<location internal="CEN_38" external="38"/>
+	<location internal="CEN_39" external="39"/>
+	<location internal="CEN_40" external="40"/>
+	<location internal="CEN_41" external="41"/>
+	<location internal="CEN_42" external="42"/>
+	<location internal="CEN_43" external="43"/>
+	<location internal="CEN_46" external="46"/>
+	<location internal="CEN_47" external="47"/>
+	<location internal="CEN_48" external="48"/>
+	<location internal="CEN_49" external="49"/>
+	<location internal="CEN_50" external="50"/>
+	<location internal="CEN_51" external="51"/>
+	<location internal="CEN_52" external="52"/>
+	<location internal="CEN_53" external="53"/>
+	<location internal="CEN_54" external="54"/>
+	<location internal="CEN_55" external="55"/>
+	<location internal="CEN_57" external="57"/>
+	<location internal="CEN_58" external="58"/>
+	<location internal="CEN_59" external="59"/>
+	<location internal="CEN_60" external="60"/>
+	<location internal="CEN_61" external="61"/>
+	<location internal="CEN_62" external="62"/>
+	<location internal="CEN_63" external="63"/>
+	<location internal="CEN_64" external="64"/>
+	<location internal="CEN_65" external="65"/>
+	<location internal="CEN_66" external="66"/>
+	<location internal="CEN_67" external="67"/>
+	<location internal="CEN_68" external="68"/>
+	<location internal="CEN_69" external="69"/>
+	<location internal="CEN_70" external="70"/>
+	<location internal="CEN_71" external="71"/>
+	<location internal="CEN_72" external="72"/>
+	<location internal="CEN_73" external="73"/>
+	<location internal="CEN_74" external="74"/>
+	<location internal="CEN_75" external="75"/>
+	<location internal="CEN_76" external="76"/>
+	<location internal="CEN_77" external="77"/>
+	<location internal="CEN_78" external="78"/>
+	<location internal="CEN_79" external="79"/>
+	<location internal="CEN_80" external="80"/>
+	<location internal="CEN_81" external="81"/>
+	<location internal="CEN_82" external="82"/>
+	<location internal="CEN_83" external="83"/>
+	<location internal="CEN_84" external="84"/>
+	<location internal="CEN_85" external="85"/>
+	<location internal="CEN_86" external="86"/>
+	<location internal="CEN_87" external="87"/>
+	<location internal="CEN_88" external="88"/>
+	<location internal="CEN_89" external="89"/>
+
+</idMap>

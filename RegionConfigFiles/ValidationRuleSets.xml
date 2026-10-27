@@ -1,0 +1,50 @@
+<validationRuleSets xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/validationRuleSets.xsd" version="1.1">
+	<validationRuleSet validationRuleSetId="MeteoStations_Precip" timeZone="0">
+		<extremeValues>
+			<hardMax constantLimit="75"/>
+			<hardMin constantLimit="0"/>
+			<softMax constantLimit="50"/>
+		</extremeValues>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Station</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>arpav_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</validationRuleSet>
+	<validationRuleSet validationRuleSetId="MeteoStations_Temper" timeZone="0">
+		<extremeValues>
+			<hardMax constantLimit="60"/>
+			<hardMin constantLimit="-40"/>
+			<softMax constantLimit="50"/>
+		</extremeValues>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Station</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>arpav_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</validationRuleSet>
+	<!--validationRuleSet validationRuleSetId="MeteoGrid_Temper" timeZone="0">
+		<extremeValues>
+			<hardMax constantLimit="60"/>
+			<hardMin constantLimit="-40"/>
+			<softMax constantLimit="50"/>
+		</extremeValues>
+		<timeSeriesSet>
+			<moduleInstanceId>Interpolate_Temper</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</validationRuleSet-->
+</validationRuleSets>

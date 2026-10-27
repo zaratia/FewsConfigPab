@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>	
+		<general>
+			<importType>grib</importType>
+			<folder>$IMPORT_FOLDER$/ECMWF</folder>
+			<fileNamePatternFilter>*.grib</fileNamePatternFilter>
+			<!--fileNameObservationDateTimePattern>'3B-HHR-E.MS.MRG.3IMERG.'yyyyMMdd'-S'HHmmss'-E?'</fileNameObservationDateTimePattern-->
+			<failedFolder>$IMPORT_FAILED_FOLDER$</failedFolder>
+			<backupFolder>$IMPORT_BACKUP_FOLDER$</backupFolder>
+			<idMapId>IdImportECMWF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>T.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Tmax.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Tmin.forecast</parameterId>
+			<locationId>ECMWF2x2</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+		<externUnit parameterId="P.forecast" cumulativeSum="true" unit="m"/>
+		<externUnit parameterId="T.forecast" cumulativeSum="false" unit="K"/>
+		<externUnit parameterId="Tmax.forecast" cumulativeSum="false" unit="K"/>
+		<externUnit parameterId="Tmin.forecast" cumulativeSum="false" unit="K"/>
+	</import>
+</timeSeriesImportRun>

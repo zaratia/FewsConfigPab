@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp1 (http://www.altova.com) by  () -->
+<timeSeriesExportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesExportRun.xsd">
+	<export>
+		<general>
+			<exportType>NETCDF-CF_GRID</exportType>
+			<folder>$EXPORT_FOLDER$\NETCDF</folder>
+			<exportFileName>
+				<name>IN_TP.nc</name>
+				<!--prefix>
+					<timeZeroFormattingString>yyyyMMddHHmm</timeZeroFormattingString>
+				</prefix-->
+			</exportFileName>
+			<idMapId>IdExportgridNETCDF</idMapId>
+			<exportMissingValueString>-9999.0</exportMissingValueString>
+			<!--unitConversionsId>ExportUnitConversions</unitConversionsId-->
+			<exportTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</exportTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Interpolate_Precip</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TP</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-370" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</export>
+	<export>
+		<general>
+			<exportType>NETCDF-CF_GRID</exportType>
+			<folder>$EXPORT_FOLDER$\NETCDF</folder>
+			<exportFileName>
+				<name>IN_TAmax.nc</name>
+				<!--prefix>
+					<timeZeroFormattingString>yyyyMMddHHmm</timeZeroFormattingString>
+				</prefix-->
+			</exportFileName>
+			<idMapId>IdExportgridNETCDF</idMapId>
+			<exportMissingValueString>-9999.0</exportMissingValueString>
+			<!--unitConversionsId>ExportUnitConversions</unitConversionsId-->
+			<exportTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</exportTimeZone>
+		</general>
+		
+		<timeSeriesSet>
+			<moduleInstanceId>Interpolate_Temper</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TAmax</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-370" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</export>
+	<export>
+		<general>
+			<exportType>NETCDF-CF_GRID</exportType>
+			<folder>$EXPORT_FOLDER$\NETCDF</folder>
+			<exportFileName>
+				<name>IN_TAmin.nc</name>
+				<!--prefix>
+					<timeZeroFormattingString>yyyyMMddHHmm</timeZeroFormattingString>
+				</prefix-->
+			</exportFileName>
+			<idMapId>IdExportgridNETCDF</idMapId>
+			<exportMissingValueString>-9999.0</exportMissingValueString>
+			<!--unitConversionsId>ExportUnitConversions</unitConversionsId-->
+			<exportTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</exportTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Interpolate_Temper</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TAmin</parameterId>
+			<locationId>LEB500</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-370" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</export>
+</timeSeriesExportRun>

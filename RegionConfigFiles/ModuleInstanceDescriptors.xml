@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
+	<!--Imports and Process-->
+	<moduleInstanceDescriptor id="Import_GFS_Server">
+		<description>Import GFS from OpenDap server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_GPM_Server">
+		<description>Import GPM imerg from ftp server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_Station">
+		<description>Import Scalar data from Files</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_CSV">
+		<description>Import Scalar data from Files</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Meteo_Preprocess_GPM">
+		<description>Process GPM Gridded Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Aggregation_Hourly_Station">
+		<description>Aggregation_Hourly_Station</description>
+		<!--moduleId>TransformationModule</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Aggregation_Daily_Station">
+		<description>Aggregation_Daily_Station</description>
+		<!--moduleId>TransformationModule</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Interpolate_Precip">
+		<description>Interpolate_Precip</description>
+		<!--moduleId>TransformationModule</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Interpolate_Temper">
+		<description>Interpolate_Temper</description>
+		<!--moduleId>TransformationModule</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Process_Sim_Forecast">
+		<description>Process_Sim_Forecast</description>
+		<!--moduleId>TransformationModule</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Export_grids_NETCDF">
+		<description>Export_grids_NETCDF</description>
+		<!--moduleId>TimeSeriesExportRun</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Export_timeseries_NETCDF">
+		<description>Export_timeseries_NETCDF</description>
+		<!--moduleId>TimeSeriesExportRun</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_test_NETCDF">
+		<description>Import_test_NETCDF</description>
+		<!--moduleId>TimeSeriesImportRun</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_timeseries">
+		<description>Import_timeseries</description>
+		<!--moduleId>TimeSeriesImportRun</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_NETCDF_timeseries">
+		<description>Import_NETCDF_timeseries</description>
+		<!--moduleId>TimeSeriesImportRun</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_Basin_NETCDF">
+		<description>Import basin netCDF</description>
+		<!--moduleId>TimeSeriesImportRun</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_CSV_timeseries">
+		<description>Import_CSV_timeseries</description>
+		<!--moduleId>TimeSeriesImportRun</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Import_ECMWF_grib">
+		<description>Import_ECMWF_grib</description>
+		<!--moduleId>TimeSeriesImportRun</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ElevationLapseGroundHistorical">
+		<description>ElevationLapseGroundHistorical</description>
+		<!--moduleId>TransformationModule</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ECMWFtoCentroids">
+		<description>ECMWFtoCentroids</description>
+		<!--moduleId>TransformationModule</moduleId-->
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ECMWFtoLEB500">
+		<description>ECMWFtoLEB500</description>
+		<!--moduleId>TransformationModule</moduleId-->
+	</moduleInstanceDescriptor>
+	<!-- Model Run Module Instances-->
+	 <moduleInstanceDescriptor id="Spyictop_Historic">
+		<description>Spyic-top model for BZ</description>
+		<!--moduleId>GeneralAdapter</moduleId-->		
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="IrriwebForecast">
+		<description>Irriweb model for LEB</description>
+		<!--moduleId>GeneralAdapter</moduleId-->		
+	</moduleInstanceDescriptor>
+</moduleInstanceDescriptors>

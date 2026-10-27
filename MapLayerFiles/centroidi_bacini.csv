@@ -1,0 +1,38 @@
+area,Inlet,Outlet,D_BAC_1,idshp,id,Consorzio,short_name,lon,lat,xepsg3003,yepsg3003
+17657822.95,prese da Fratta e da Guà,scarico in Fratta e deriv. verso Vampadore,Pizzon,1,84,Adige Euganeo,Pizzon,11.41228743,45.27114188,1689257.055,5015921.332
+41161827.66,paratoia piana da Vampadore,idro.Cavariega/defl.porte vinciane,Cavariega acque alte,2,112,Adige Euganeo,Cavariega acque alte,11.56775985,45.20300517,1701693.861,5008728.54
+19808847.64,deriv. da Cavariega acque alte,idro.Cavariega,Cavariega acque basse,3,115,Adige Euganeo,Cavariega acque basse,11.58373343,45.17266412,1703056.278,5005397.919
+3736775.43,imp. di soll. da Fratta-Gorz.,idro. Mora Livelli,Mora Livelli acque medie,4,141,Adige Euganeo,Mora acque medie,11.66515972,45.1357535,1709590.015,5001505.431
+1596112.91,,scarico in Mora Liv. acque medie,Mora Livelli acque basse,5,142,Adige Euganeo,Mora acque basse,11.69763392,45.13726155,1712137.872,5001757.713
+83272496.07,sifoni da c. Bisatto e Bagnarolo,uscita canale F.Mons. e Fossona delle Basse,Fossa Monselesana,6,163,Adige Euganeo,Fossa Monselesana,11.79170705,45.21652469,1719230.136,5010814.544
+30309003.19,,scarico a gravità nel c. Bisatto,Zona Collinare,7,121,Adige Euganeo,Zona Collinare,11.6643609,45.30869459,1708892.634,5020715.9
+89022102.68,imp. di soll. e sifoni da Gorz. e Bisatto,idro.Ca'Giovan. e idro.Lavacci,Navegale - Ca'Giovanelli - Lavacci,8,149,Adige Euganeo,Navegale,11.73180736,45.17237619,1714692.906,5005748.961
+9155712.33,presa e imp. di soll. da Gorz. e scolo Lozzo,idro.Valgrande e idro.Cuoro,Valgrande - Cuoro,9,126,Adige Euganeo,Valgrande-Cuoro,11.64130308,45.16462437,1707609.279,5004651.144
+37136592.35,sifoni da Frassine,botte di Vighizzolo,Brancaglia inferiore,10,110,Adige Euganeo,Brancaglia,11.59005376,45.23450727,1703332.415,5012284.156
+2828846.67,sifone Berto da c. Battaglia,idro. Catajo (scarico nel Rialto),P. Catajo e Sav. di Bagnarolo - Idro. Catajo,11,191,Adige Euganeo,Paludi Cataio,11.77831894,45.29937751,1717861.686,5019982.657
+64830752.58,presa Ca' Barbaro,idro. Acquanera,R. di Monselice - P. Catajo idro. Acquanera,12,131,Adige Euganeo,Retratto di Monselice,11.72428219,45.26971202,1713736.39,5016542.302
+4814554.24,sifone da c. Battaglia,Idrovora Savellon,P.Catajo e Sav. di Bagnarolo. - Idro. Savellon e Tognai,13,186,Adige Euganeo,Savellon di Bagnarolo,11.77862689,45.26485856,1718018.07,5016148.649
+157021386.64,immiss. canali da S. Silvestro e Sorgaglia,Idrovora Rebosola,T. Alti - Barbegara -  Rebosola - S. Silvestro,14,224,Adige Euganeo,Terreni Alti,11.97520336,45.23099475,1733578.73,5012937.091
+205263197.91,"prese da Guà, LEB, Bisatto",confluenza con Brancaglia per formare il Masina,Lozzo,15,104,Adige Euganeo,Lozzo,11.56822911,45.30813912,1701358.673,5020409.418
+105549649.17,chiav. e sifoni da Frassine,scarico a gravità nel Gorzone,Vampadore,16,97,Adige Euganeo,Vampadore,11.47062043,45.20077802,1694072.346,5008242.967
+59334266.75,sifone Beolo da Gorzone e immiss. da F.Mons.,idrovore e scarico c.F.Mons. in c. dei Cuori,D.Bagnoli - A.del Santo - Beolo - Bertolina - Vitella - Sorgaglia,17,167,Adige Euganeo,Dominio di Bagnoli,11.90362981,45.18138802,1728158.638,5007221.358
+122323817.9,"sifone Papafava, canale F.Mons., scarichi idrovore",idro Casetta e Punta Gorzone,Foresto Sup. e cen.-Zennare-Metiche-Tassi-Zuccona-Giovannelli-Civ.Borsetto-Bac.Orientale-P.Gorzone,18,174,Adige Euganeo,Foresto,12.10069635,45.16812836,1743698.182,5006324.251
+58648419,,,Ottoville - Bisatto,19,73,Alta Pianura Veneta,Ottoville - Bisatto,11.63108824,45.4156089,1705895.999,5032507.823
+90224753.52,,,Zerpano,20,48,Alta Pianura Veneta,Zerpano,11.33074767,45.31967644,1682704.823,5021125.078
+37622934.03,,,Liona - Frassenella,21,66,Alta Pianura Veneta,Lione - Frassenella,11.5301603,45.38260669,1698114.349,5028587.951
+49917887.73,,,Ronego,22,61,Alta Pianura Veneta,Ronego,11.41232423,45.33373238,1689051.743,5022874.874
+92348383.57,,,Patriarcati - Sud,23,212,Bacchiglione,Patriarcati - Sud,11.88155687,45.33048168,1725832.341,5023722.518
+180533109.11,,,Destra Brenta Sud,24,232,Bacchiglione,Destra Brenta Sud,12.00925945,45.31517971,1735902.821,5022388.689
+48771350.9,,,Sinistra Brenta-Marinelle,25,241,Bacchiglione,Sinistra Brenta-Marinelle,12.06060368,45.38178467,1739645.879,5029939.822
+11647305.95,,,F.Alti-F.Bassi-Chiodare,26,218,Bacchiglione,F.Alti-Chiodare,11.8143845,45.2904642,1720723.978,5019090.603
+21773769.01,,,Zena-Bernio-Trezze,27,252,Bacchiglione,Zena-Bernio-Trezze,12.18678316,45.23236756,1750181.431,5013724.214
+23041683.27,,,Settima Presa-Guzzone,28,246,Bacchiglione,Settima Presa-Guzzone,12.11481816,45.29049664,1744282.821,5019961.205
+115524958.61,,,Colli Ruganei-Treponti,29,204,Bacchiglione,Colli Euganei-Treponti,11.75251592,45.36095617,1715604.738,5026754.259
+2120481.33,,,Fogolana,30,249,Bacchiglione,Fogolana,12.14616435,45.25471328,1746896.103,5016081.445
+26890466.74,,,Bisatto,34,37,No leb,Bisatto,11.57471847,45.44504439,1701380.666,5035635.21
+55910709.26,,,Fratta,35,25,No leb,Fratta,11.36787002,45.42634253,1685265.657,5033060.075
+18742281.27,,,Ronego-fuori sistema,31,31,No leb,Ronego-Fuori-Sistema,11.43627768,45.36855728,1690811.577,5026800.261
+23838218.49,,,Liona-fuori sistema,32,34,No leb,Liona-Fuori-Sistema,11.48513069,45.42357704,1694448.354,5033029.707
+262960539.22,,,Agno - Gua' -Frassine,33,28,No leb,Agno - Gua' -Frassine,11.32859658,45.58606036,1681678.695,5050714.641
+5228360.89,,,Padova Sud,36,40,No leb,Padova Sud,11.89429684,45.39344284,1726579.057,5030752.991
+4078706.91,,,Noventana,37,43,No leb,Noventana,11.96835789,45.4139459,1732292.031,5033242.1

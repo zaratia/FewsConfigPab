@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_TIMESERIES</importType>
+			<folder>$IMPORT_FOLDER$/NC/meteo</folder>
+			<fileNamePatternFilter>*.nc</fileNamePatternFilter>
+			<failedFolder>$IMPORT_FAILED_FOLDER$</failedFolder>
+			<backupFolder>$IMPORT_BACKUP_FOLDER$</backupFolder>
+			<idMapId>IdImportBasinNETCDF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+			<dataFeedId>Import.NETCDF</dataFeedId>
+			<expiryTime unit="day" multiplier="365"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Basin_NETCDF</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>bz_centroids_topo60</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Basin_NETCDF</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>intercept.obs</parameterId>
+			<locationSetId>bz_grad_centroids_topo60</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Basin_NETCDF</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>slope.obs</parameterId>
+			<locationSetId>bz_grad_centroids_topo60</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

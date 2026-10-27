@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
+	
+	<filter id="BZ Stazioni">
+		<mapExtentId>BZ</mapExtentId>
+		<child foreignKey="gauges_hourly_temper"/>
+		<child foreignKey="gauges_hourly_prec"/>
+	</filter>
+
+	<filter id="BZ basin from obervations">
+		<mapExtentId>BZ</mapExtentId>
+		<child foreignKey="areal_hourly_prec"/>
+		<child foreignKey="gradient_hourly_slope"/>
+		<child foreignKey="gradient_hourly_int"/>
+	</filter>
+	
+	<filter id="BZ basin spyic-top">
+		<mapExtentId>BZ</mapExtentId>
+		<child foreignKey="water_equi"/>
+		<child foreignKey="soilmoisture"/>
+		<child foreignKey="storage"/>
+		<child foreignKey="precipitation"/>
+		<child foreignKey="temperature"/>
+		<child foreignKey="rain"/>
+		<child foreignKey="snow"/>
+		<child foreignKey="melt"/>
+	</filter>
+	
+	<filter id="BZ stations spyic-top">
+		<mapExtentId>BZ</mapExtentId>
+		<child foreignKey="discharge"/>
+	</filter>
+		
+	
+	<filter id="gauges_hourly_prec" name="P hourly [mm]">
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Station</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>bz_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="0"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	
+	<filter id="gauges_hourly_temper" name="T hourly [°C]">
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Station</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.obs</parameterId>
+			<locationSetId>bz_stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="0"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	
+	<filter id="areal_hourly_prec" name="P hourly [mm]">
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Basin_NETCDF</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.obs</parameterId>
+			<locationSetId>bz_centroids_topo60</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="0"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	
+	<filter id="gradient_hourly_slope" name="Slope hourly [-]">
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Basin_NETCDF</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>slope.obs</parameterId>
+			<locationSetId>bz_grad_centroids_topo60</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="0"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	
+	<filter id="gradient_hourly_int" name="Intercept hourly [°C]">
+		<timeSeriesSet>
+			<moduleInstanceId>Import_Basin_NETCDF</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>intercept.obs</parameterId>
+			<locationSetId>bz_grad_centroids_topo60</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="0"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	
+	<!-- BZ basin historic-->
+	<filter id="water_equi" name="WE [mm]">
+		<timeSeriesSet>
+			<moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>WE.simulated</parameterId>
+			<locationSetId>bz_centroids_topo60</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="2"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	<filter id="soilmoisture" name="SM [-]">
+		<timeSeriesSet>
+			<moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SM.simulated</parameterId>
+			<locationSetId>bz_centroids_topo60</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="2"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	<filter id="storage" name="STG [mm]">
+		<timeSeriesSet>
+			<moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>STG.simulated</parameterId>
+			<locationSetId>bz_centroids_topo60</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="2"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+
+	<filter id="precipitation" name="Areal precipitation [mm]">
+		<timeSeriesSet>
+			<moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.simulated</parameterId>
+			<locationSetId>bz_centroids_topo60</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="2"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	<filter id="snow" name="Areal snow [mm]">
+		<timeSeriesSet>
+			<moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>snow.simulated</parameterId>
+			<locationSetId>bz_centroids_topo60</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="2"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	<filter id="rain" name="Areal rain [mm]">
+		<timeSeriesSet>
+			<moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>rain.simulated</parameterId>
+			<locationSetId>bz_centroids_topo60</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="2"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	<filter id="melt" name="Areal melt [mm]">
+		<timeSeriesSet>
+			<moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>melt.simulated</parameterId>
+			<locationSetId>bz_centroids_topo60</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="2"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	<filter id="temperature" name="Temperatura media [°C]">
+		<timeSeriesSet>
+			<moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.simulated</parameterId>
+			<locationSetId>bz_grad_centroids_topo60</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="2"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+	<filter id="discharge" name="Portata [m^3/s]">
+		<timeSeriesSet>
+			<moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.simulated</parameterId>
+			<locationSetId>bz_stations</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-30" end="2"/>
+			<readWriteMode>editing visible to all future task runs</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</filter>
+
+</filters>

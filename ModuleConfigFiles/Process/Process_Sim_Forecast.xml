@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<!--GFS forecasts plus GMP satellite -->
+	<variable>
+		<variableId>Rain_inst</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.forecast</parameterId>
+			<locationSetId>centroidi_distretti</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+			<ensembleMemberId>0</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Rain_acc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Process_Sim_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.det.forecast</parameterId>
+			<locationSetId>centroidi_distretti</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>STO_inst</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>STO.forecast</parameterId>
+			<locationSetId>centroidi_distretti</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>ECMWFSeas5</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>STO_50</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Process_Sim_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>STO.50.forecast</parameterId>
+			<locationSetId>centroidi_distretti</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>STO_25</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Process_Sim_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>STO.25.forecast</parameterId>
+			<locationSetId>centroidi_distretti</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>STO_75</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Process_Sim_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>STO.75.forecast</parameterId>
+			<locationSetId>centroidi_distretti</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+
+	<!-- Accumulate forecast precipitation-->
+	<transformation id="Accumulate rainfall forecast">
+		<accumulation>
+			<sum>
+				<inputVariable>
+					<variableId>Rain_inst</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Rain_acc</variableId>
+				</outputVariable>
+			</sum>
+		</accumulation>
+	</transformation>	
+	
+	<!-- Calc storage percentile-->
+	<transformation id="STO Compute 75 percentile">
+		<statisticsEnsemble>
+			<percentileNonExceedence>
+				<inputVariable>
+					<variableId>STO_inst</variableId>
+				</inputVariable>
+				<value>75</value>
+				<outputVariable>
+					<variableId>STO_75</variableId>
+				</outputVariable>
+			</percentileNonExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="STO Compute 25 percentile">
+		<statisticsEnsemble>
+			<percentileNonExceedence>
+				<inputVariable>
+					<variableId>STO_inst</variableId>
+				</inputVariable>
+				<value>25</value>
+				<outputVariable>
+					<variableId>STO_25</variableId>
+				</outputVariable>
+			</percentileNonExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="STO Compute 50 percentile">
+		<statisticsEnsemble>
+			<percentileNonExceedence>
+				<inputVariable>
+					<variableId>STO_inst</variableId>
+				</inputVariable>
+				<value>50</value>
+				<outputVariable>
+					<variableId>STO_50</variableId>
+				</outputVariable>
+			</percentileNonExceedence>
+		</statisticsEnsemble>
+	</transformation>
+</transformationModule>

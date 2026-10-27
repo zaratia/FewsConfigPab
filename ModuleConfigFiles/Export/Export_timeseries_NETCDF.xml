@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesExportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesExportRun.xsd">
+    <export>
+        <general>
+            <exportType>NETCDF-CF_TIMESERIES</exportType>
+            <folder>$EXPORT_FOLDER$\NETCDF</folder>
+            <exportFileName>
+                <name>.nc</name>
+                <prefix>
+                    <timeZeroFormattingString>yyyyMMddHHmm</timeZeroFormattingString>
+                </prefix>
+            </exportFileName>
+            <idMapId>IdExportNETCDFtseries</idMapId>
+            <exportMissingValueString>-999</exportMissingValueString>
+            <exportTimeZone>
+                <timeZoneName>GMT</timeZoneName>
+            </exportTimeZone>
+        </general>
+        <!--properties>
+            <string key="timeseriesproperty:rivieren1" value='netcdfattribute:discharge_forcing_id'/>
+            <string key="timeseriesproperty:rivieren2" value='netcdfattribute:systemid '/>
+        </properties-->
+        <timeSeriesSet>
+            <moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>STO.simulated</parameterId>
+            <locationSetId>centroidi_distretti</locationSetId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="12000"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>PET.simulated</parameterId>
+            <locationSetId>centroidi_distretti</locationSetId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="12000"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>ET.simulated</parameterId>
+            <locationSetId>centroidi_distretti</locationSetId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="12000"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>P.simulated</parameterId>
+            <locationSetId>centroidi_distretti</locationSetId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="12000"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>T.simulated</parameterId>
+            <locationSetId>centroidi_distretti</locationSetId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="12000"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>IRR.simulated</parameterId>
+            <locationSetId>centroidi_distretti</locationSetId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="12000"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>RO.simulated</parameterId>
+            <locationSetId>centroidi_distretti</locationSetId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="12000"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>IN.simulated</parameterId>
+            <locationSetId>centroidi_distretti</locationSetId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="12000"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>H.simulated</parameterId>
+            <locationSetId>centroidi_distretti</locationSetId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="12000"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+        <timeSeriesSet>
+            <moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+            <valueType>scalar</valueType>
+            <parameterId>GW.simulated</parameterId>
+            <locationSetId>centroidi_distretti</locationSetId>
+            <timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+            <relativeViewPeriod unit="day" start="0" end="12000"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+        
+    </export>
+</timeSeriesExportRun>

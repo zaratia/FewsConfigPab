@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<gridDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
+	<title>Spatial Data Display</title>
+	<defaults>
+		<parameterGroupId>Precip./Irrig.</parameterGroupId>
+		<classBreaks>
+			<unitVisible>true</unitVisible>
+			<break color="FFFFFF" lowerValue="0" opaquenessPercentage="20"/>
+			<break color="99E9FF" lowerValue="0.2" opaquenessPercentage="50"/>
+			<break color="00C8FF" lowerValue="1" opaquenessPercentage="50"/>
+			<break color="0053FF" lowerValue="5" opaquenessPercentage="50"/>
+			<break color="00956A" lowerValue="10" opaquenessPercentage="50"/>
+			<break color="00FA10" lowerValue="25" opaquenessPercentage="50"/>
+			<break color="FFBF00" lowerValue="50" opaquenessPercentage="50"/>
+			<break color="FF8F00" lowerValue="75" opaquenessPercentage="50"/>
+			<break color="FF0000" lowerValue="100" opaquenessPercentage="50"/>
+			<break color="960000" lowerValue="200" opaquenessPercentage="50"/>
+			<break color="FF00CC" lowerValue="400" opaquenessPercentage="50"/>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<parameterGroupId>Prec/WE</parameterGroupId>
+		<classBreaks>
+			<unitVisible>true</unitVisible>
+			<break color="FFFFFF" lowerValue="0" opaquenessPercentage="20"/>
+			<break color="99E9FF" lowerValue="5" opaquenessPercentage="20"/>
+			<break color="00C8FF" lowerValue="10" opaquenessPercentage="20"/>
+			<break color="0053FF" lowerValue="20" opaquenessPercentage="20"/>
+			<break color="00956A" lowerValue="40" opaquenessPercentage="75"/>
+			<break color="00FA10" lowerValue="70" opaquenessPercentage="75"/>
+			<break color="FFBF00" lowerValue="100" opaquenessPercentage="75"/>
+			<break color="FF8F00" lowerValue="200" opaquenessPercentage="75"/>
+			<break color="FF0000" lowerValue="300" opaquenessPercentage="75"/>
+			<break color="960000" lowerValue="400" opaquenessPercentage="75"/>
+			<break color="FF00CC" lowerValue="500" opaquenessPercentage="75"/>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<parameterGroupId>Temperature</parameterGroupId>
+		<classBreaks>
+			<lowerColor>blue</lowerColor>
+			<upperColor>light yellow</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>-30</lowerValue>
+			<lowerValue>-25</lowerValue>
+			<lowerValue>-20</lowerValue>
+			<lowerValue>-15</lowerValue>
+			<lowerValue>-10</lowerValue>
+			<lowerValue>-5</lowerValue>
+			<lowerValue>0</lowerValue>
+			<lowerValue>5</lowerValue>
+			<lowerValue>10</lowerValue>
+			<lowerValue>15</lowerValue>
+			<lowerColor>yellow</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>20</lowerValue>
+			<lowerValue>25</lowerValue>
+			<lowerValue>30</lowerValue>
+			<lowerValue>35</lowerValue>
+			<lowerValue>40</lowerValue>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<parameterGroupId>Evaporation</parameterGroupId>
+		<classBreaks>
+			<color opaquenessPercentage="50" color="white" lowerValue="0"/>
+			<lowerColor>lavender blush2</lowerColor>
+			<upperColor>royal blue4</upperColor>
+			<lowerValue>0.5</lowerValue>
+			<lowerValue>1.0</lowerValue>
+			<lowerValue>8</lowerValue>
+			<lowerValue>9</lowerValue>
+			<lowerValue>10</lowerValue>
+			<lowerValue>11</lowerValue>
+			<lowerValue>12</lowerValue>
+			<lowerValue>13</lowerValue>
+			<lowerValue>14</lowerValue>
+			<lowerColor>royal blue4</lowerColor>
+			<upperColor>yellow</upperColor>
+			<lowerValue>15</lowerValue>
+			<lowerValue>16</lowerValue>
+			<lowerValue>17</lowerValue>
+			<lowerValue>18</lowerValue>
+			<lowerValue>19</lowerValue>
+			<lowerValue>20</lowerValue>
+			<lowerValue>21</lowerValue>
+			<lowerValue>22</lowerValue>
+			<lowerValue>23</lowerValue>
+			<lowerColor>orange</lowerColor>
+			<upperColor>purple</upperColor>
+			<lowerValue>24</lowerValue>
+			<lowerValue>25</lowerValue>
+			<lowerValue>26</lowerValue>
+			<lowerValue>27</lowerValue>
+			<lowerValue>28</lowerValue>
+			<lowerValue>31</lowerValue>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<parameterGroupId>Waterlevel</parameterGroupId>
+		<parameterGroupId>Waterdepth</parameterGroupId>
+		<classBreaks>
+			<color opaquenessPercentage="50" color="white" lowerValue="0.001"/>
+			<lowerColor>light blue</lowerColor>
+			<upperColor>blue</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>0.002</lowerValue>
+			<lowerValue>0.1</lowerValue>
+			<lowerValue>0.2</lowerValue>
+			<lowerValue>0.3</lowerValue>
+			<lowerValue>0.5</lowerValue>
+			<lowerValue>1</lowerValue>
+			<lowerValue>1.5</lowerValue>
+			<lowerColor>blue</lowerColor>
+			<upperColor>yellow</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>2</lowerValue>
+			<lowerValue>2.5</lowerValue>
+			<lowerValue>3</lowerValue>
+			<lowerColor>yellow</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>50</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>3.5</lowerValue>
+			<lowerValue>4</lowerValue>
+			<lowerValue>4.5</lowerValue>
+			<lowerValue>5</lowerValue>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<parameterGroupId>Discharge</parameterGroupId>
+		<classBreaks>
+			<color opaquenessPercentage="50" color="white" lowerValue="5"/>
+			<lowerColor>lavender blush2</lowerColor>
+			<upperColor>royal blue4</upperColor>
+			<lowerValue>6</lowerValue>
+			<lowerValue>7</lowerValue>
+			<lowerValue>8</lowerValue>
+			<lowerValue>9</lowerValue>
+			<lowerValue>10</lowerValue>
+			<lowerValue>15</lowerValue>
+			<lowerValue>20</lowerValue>
+			<lowerValue>25</lowerValue>
+			<lowerValue>30</lowerValue>
+			<lowerColor>royal blue4</lowerColor>
+			<upperColor>yellow</upperColor>
+			<lowerValue>35</lowerValue>
+			<lowerValue>40</lowerValue>
+			<lowerValue>45</lowerValue>
+			<lowerValue>50</lowerValue>
+			<lowerValue>75</lowerValue>
+			<lowerValue>100</lowerValue>
+			<lowerValue>200</lowerValue>
+			<lowerValue>300</lowerValue>
+			<lowerValue>400</lowerValue>
+			<lowerColor>orange</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerValue>500</lowerValue>
+			<lowerValue>750</lowerValue>
+			<lowerValue>1000</lowerValue>
+			<lowerValue>1250</lowerValue>
+			<lowerValue>1500</lowerValue>
+			<lowerValue>2000</lowerValue>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<parameterGroupId>Impacts</parameterGroupId>
+		<classBreaks>
+			<lowerColor>yellow</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>70</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>70</upperOpaquenessPercentage>
+			<lowerValue>1</lowerValue>
+			<lowerValue>50</lowerValue>
+			<lowerValue>100</lowerValue>
+			<lowerValue>200</lowerValue>
+			<lowerValue>300</lowerValue>
+			<lowerValue>400</lowerValue>
+			<lowerValue>500</lowerValue>
+			<lowerValue>600</lowerValue>
+			<lowerValue>700</lowerValue>
+			<lowerValue>800</lowerValue>
+			<lowerValue>900</lowerValue>
+			<lowerValue>1000</lowerValue>
+		</classBreaks>
+	</defaults>
+	<defaults>
+		<plotGroupId>GFS</plotGroupId>
+		<contourValues>
+			<value>950</value>
+			<value>952</value>
+			<value>954</value>
+			<value>956</value>
+			<value>958</value>
+			<value>960</value>
+			<value>962</value>
+			<value>964</value>
+			<value>966</value>
+			<value>968</value>
+			<value>970</value>
+			<value>972</value>
+			<value>974</value>
+			<value>976</value>
+			<value>978</value>
+			<value>980</value>
+			<value>982</value>
+			<value>984</value>
+			<value>986</value>
+			<value>988</value>
+			<value>990</value>
+			<value>992</value>
+			<value>994</value>
+			<value>996</value>
+			<value>998</value>
+			<value>1000</value>
+			<value>1002</value>
+			<value>1004</value>
+			<value>1006</value>
+			<value>1008</value>
+			<value>1010</value>
+			<value>1012</value>
+			<value>1014</value>
+			<value>1016</value>
+			<value>1018</value>
+			<value>1020</value>
+			<value>1022</value>
+			<value>1024</value>
+			<value>1026</value>
+			<value>1028</value>
+			<value>1030</value>
+			<value>1032</value>
+			<value>1034</value>
+			<value>1036</value>
+			<value>1038</value>
+			<value>1040</value>
+			<value>1042</value>
+			<value>1044</value>
+			<value>1046</value>
+			<value>1048</value>
+			<value>1050</value>
+		</contourValues>
+		<geoMap>
+			<geoDatum>WGS 1984</geoDatum>
+			<projection>web_mercator</projection>
+			<!--defaultExtent id="World">
+				<left>-180</left>
+				<right>180</right>
+				<top>90</top>
+				<bottom>-70</bottom>
+			</defaultExtent-->
+			<defaultExtent id="BZ">
+				<left>10.2</left>
+				<right>12.6</right>
+				<top>47.2</top>
+				<bottom>46.0</bottom>
+			</defaultExtent>
+			<extraExtent id="LEB">
+				<left>9</left>
+				<right>14</right>
+				<top>46</top>
+				<bottom>44.5</bottom>
+			</extraExtent>
+			<extraExtent id="Europe">
+				<left>-30</left>
+				<right>50</right>
+				<top>70</top>
+				<bottom>30</bottom>
+			</extraExtent>
+			<scaleBarVisible>true</scaleBarVisible>
+			<northArrowVisible>true</northArrowVisible>
+			<labelsVisible>true</labelsVisible>
+			<backgroundColor>white</backgroundColor>
+			<openStreetMapLayer id="Open Street Map">
+				<url>http://tile.openstreetmap.org</url>
+				<visible>true</visible>
+				<cacheDir>$CACHE_FOLDER$/OSM</cacheDir>
+			</openStreetMapLayer>
+			<openStreetMapLayer id="Landscape">
+				<url>http://tile.thunderforest.com/landscape</url>
+				<visible>false</visible>
+				<cacheDir>$CACHE_FOLDER$/LandscapeTiles</cacheDir>
+			</openStreetMapLayer>
+			<layer id="Satellite">
+				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+				<visible>false</visible>
+				<properties>
+					<string key="tileUrlPattern" value="http://h%RIGHT(QUAD_KEY,1)%.ortho.tiles.virtualearth.net/tiles/h%QUAD_KEY%.jpeg?g=1"/>
+					<string key="cacheDir" value="$CACHE_FOLDER$/Satellite_Cache"/>
+					<int key="minZoomLevel" value="2"/>
+					<int key="maxZoomLevel" value="17"/>
+					<int key="topZoomLevel" value="19"/>
+					<int key="tileSize" value="256"/>
+				</properties>
+			</layer>
+			<layer id="World" name="ArcGIS World Satellite Map">
+				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+				<visible>true</visible>
+				<properties>
+					<string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+					<string key="cacheDir" value="$CACHE_FOLDER$/World_Imagery"/>
+					<int key="minZoomLevel" value="1"/>
+					<int key="maxZoomLevel" value="19"/>
+					<int key="topZoomLevel" value="21"/>
+					<int key="tileSize" value="256"/>
+				</properties>
+			</layer>
+			<wmsLayer id="srtmv4.1_s0_pyramidal_color">
+				<url>http://www.webservice-energy.org/mapserv/srtm?</url>
+				<wmsLayerName>srtmv4.1_s0_pyramidal_color</wmsLayerName>
+				<visible>false</visible>
+				<cacheDir>$CACHE_FOLDER$/WMSLayers/srtmv4.1_s0_pyramidal_color</cacheDir>
+			</wmsLayer>
+			<esriShapeLayer id="World">
+				<description>World</description>
+				<file>cntry98.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>false</visible>
+				<toolTip>%CNTRY_NAME%</toolTip>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+			</esriShapeLayer>
+			<layerGroup id="ShapeLEB">
+				<esriShapeLayer id="Distretti">
+					<description>Distretti serviti</description>
+					<file>bacini.shp</file>
+					<geoDatum>EPSG:3003</geoDatum>
+					<visible>true</visible>
+					<lineColor>red</lineColor>
+					<!--fillRgbColor>F7F5B8</fillRgbColor-->
+					<fillRgbColor>FFFFFF</fillRgbColor>
+					<opaquenessPercentage>0</opaquenessPercentage>
+				</esriShapeLayer>
+			</layerGroup>
+			<layerGroup id="DEM">
+				<esriAsciiGridLayer id="DEM BZ TOPO60">
+					<file>%REGION_HOME%/Map/demaa_250_new.asc</file>
+					<geoDatum>EPSG:32632</geoDatum>
+					<visible>true</visible>
+					<classBreaks>
+						<break color="F1D170" lowerValue="-150"/>
+						<break color="47AB49" lowerValue="300"/>
+						<break color="006200" lowerValue="500"/>
+						<break color="AC8159" lowerValue="1500"/>
+						<break color="FFFFFF" lowerValue="2000"/>
+						<break color="80FFFF" lowerValue="2500"/>
+					</classBreaks>
+				</esriAsciiGridLayer>
+			</layerGroup>
+		</geoMap>
+		<timeDisplayLabels>bottomRight</timeDisplayLabels>
+	</defaults>
+	<defaults>
+		<plotGroupId>Satellite precipitation</plotGroupId>
+		<plotGroupId>GFS</plotGroupId>
+		<geoMap>
+			<geoDatum>WGS 1984</geoDatum>
+			<projection>web_mercator</projection>
+			<defaultExtent id="World">
+				<left>-180</left>
+				<right>180</right>
+				<top>90</top>
+				<bottom>-70</bottom>
+			</defaultExtent>
+			<extraExtent id="Europe">
+				<left>-30</left>
+				<right>50</right>
+				<top>70</top>
+				<bottom>30</bottom>
+			</extraExtent>
+			<scaleBarVisible>true</scaleBarVisible>
+			<northArrowVisible>true</northArrowVisible>
+			<labelsVisible>true</labelsVisible>
+			<backgroundColor>white</backgroundColor>
+			<openStreetMapLayer id="Open Street Map">
+				<url>http://tile.openstreetmap.org</url>
+				<visible>true</visible>
+				<cacheDir>$CACHE_FOLDER$/OSM</cacheDir>
+			</openStreetMapLayer>
+			<openStreetMapLayer id="Landscape">
+				<url>http://tile.thunderforest.com/landscape</url>
+				<visible>false</visible>
+				<cacheDir>$CACHE_FOLDER$/LandscapeTiles</cacheDir>
+			</openStreetMapLayer>
+			<layer id="Satellite">
+				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+				<visible>false</visible>
+				<properties>
+					<string key="tileUrlPattern" value="http://h%RIGHT(QUAD_KEY,1)%.ortho.tiles.virtualearth.net/tiles/h%QUAD_KEY%.jpeg?g=1"/>
+					<string key="cacheDir" value="$CACHE_FOLDER$/Satellite_Cache"/>
+					<int key="minZoomLevel" value="2"/>
+					<int key="maxZoomLevel" value="17"/>
+					<int key="topZoomLevel" value="19"/>
+					<int key="tileSize" value="256"/>
+				</properties>
+			</layer>			
+			<wmsLayer id="srtmv4.1_s0_pyramidal_color">
+				<url>http://www.webservice-energy.org/mapserv/srtm?</url>
+				<wmsLayerName>srtmv4.1_s0_pyramidal_color</wmsLayerName>
+				<visible>false</visible>
+				<cacheDir>$CACHE_FOLDER$/WMSLayers/srtmv4.1_s0_pyramidal_color</cacheDir>
+			</wmsLayer>
+			<esriShapeLayer id="World">
+				<description>World</description>
+				<file>cntry98.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>false</visible>
+				<toolTip>%CNTRY_NAME%</toolTip>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+			</esriShapeLayer>
+		</geoMap>
+		<timeDisplayLabels>bottomRight</timeDisplayLabels>
+	</defaults>
+	<gridPlotGroup id="Satellite precipitation" name="Satellite precipitation">
+		<gridPlot id="Precipitation GPM [mm]">
+			<timeSeriesSet>
+				<moduleInstanceId>Import_GPM_Server</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>P.obs</parameterId>
+				<locationId>IMERG_world</locationId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="minute" multiplier="30"/>
+				<relativeViewPeriod unit="day" start="-4" end="0"/>
+				<readWriteMode>read only</readWriteMode>
+			</timeSeriesSet>
+			<accumulationTimeSpan unit="hour" multiplier="1"/>
+			<accumulationTimeSpan unit="hour" multiplier="3"/>
+			<accumulationTimeSpan unit="hour" multiplier="6"/>
+			<accumulationTimeSpan unit="hour" multiplier="12"/>
+			<accumulationTimeSpan unit="day" multiplier="1"/>
+			<accumulationTimeSpan unit="day" multiplier="2"/>
+			<accumulationTimeSpan unit="day" multiplier="3"/>
+			<accumulationTimeSpan unit="day" multiplier="7"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Precipitation GPM [mm] Europe">
+			<timeSeriesSet>
+				<moduleInstanceId>Meteo_Preprocess_GPM</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>P.obs</parameterId>
+				<locationId>IMERG</locationId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="minute" multiplier="30"/>
+				<relativeViewPeriod unit="day" start="-4" end="0"/>
+				<readWriteMode>read only</readWriteMode>
+			</timeSeriesSet>
+			<accumulationTimeSpan unit="hour" multiplier="1"/>
+			<accumulationTimeSpan unit="hour" multiplier="3"/>
+			<accumulationTimeSpan unit="hour" multiplier="6"/>
+			<accumulationTimeSpan unit="hour" multiplier="12"/>
+			<accumulationTimeSpan unit="day" multiplier="1"/>
+			<accumulationTimeSpan unit="day" multiplier="2"/>
+			<accumulationTimeSpan unit="day" multiplier="3"/>
+			<accumulationTimeSpan unit="day" multiplier="7"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+	</gridPlotGroup>
+	<gridPlotGroup id="GFS" name="GFS Forecasts">
+		<gridPlot id="Rain_forecast_nwp" name="Rainfall Forecast">
+			<dataLayer>
+				<timeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>P.forecast</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep multiplier="3" unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Wind_forecast_nwp" name="Wind Forecast">
+			<dataLayer>
+				<arrowColor>white</arrowColor>
+				<arrowSymbol>flow</arrowSymbol>
+				<multipleArrowsPerValue>false</multipleArrowsPerValue>
+				<uTimeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>WS.u.forecast</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep multiplier="3" unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</uTimeSeriesSet>
+				<vTimeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>WS.v.forecast</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep multiplier="3" unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</vTimeSeriesSet>
+				<uvAmplitudeParameterId>Wind.speed</uvAmplitudeParameterId>
+				<uvDirectionParameterId>Wind.dir</uvDirectionParameterId>
+			</dataLayer>
+			<dataLayer>
+				<onlyContourLines>true</onlyContourLines>
+				<timeSeriesSet>
+					<moduleInstanceId>Import_GFS_Server</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>Pressure.msl</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep multiplier="3" unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<divider>100</divider>
+				</timeSeriesSet>
+			</dataLayer>
+			<movieFrameDurationMillis>300</movieFrameDurationMillis>
+			<hideLastValueCheckBox>true</hideLastValueCheckBox>
+			<barLegend>
+				<position>right</position>
+				<width>50</width>
+				<length>400</length>
+				<labelsInside>true</labelsInside>
+			</barLegend>
+			<classBreaksId>Class.Wind.Speed</classBreaksId>
+			<contourLinesColor>gray30</contourLinesColor>
+		</gridPlot>
+	</gridPlotGroup>
+	<gridPlotGroup id="BZ simulated" name="BZ simulated">
+		<gridPlot id="WE [mm]">
+			<timeSeriesSet>
+				<moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>WE.grid.simulated</parameterId>
+				<locationId>BZDEMTOPO60</locationId>
+				<timeSeriesType>simulated historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<relativeViewPeriod unit="day" start="-180" end="+180"/>
+				<readWriteMode>read only</readWriteMode>
+			</timeSeriesSet>
+			<!--accumulationTimeSpan unit="hour" multiplier="1"/>
+			<accumulationTimeSpan unit="hour" multiplier="3"/>
+			<accumulationTimeSpan unit="hour" multiplier="6"/>
+			<accumulationTimeSpan unit="hour" multiplier="12"/-->
+			<accumulationTimeSpan unit="day" multiplier="5"/>
+			<accumulationTimeSpan unit="day" multiplier="10"/>
+			<!--accumulationTimeSpan unit="day" multiplier="3"/>
+			<accumulationTimeSpan unit="day" multiplier="7"/-->
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Min s.l. temper. [°C]">
+			<timeSeriesSet>
+				<moduleInstanceId>Interpolate_Temper</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>Tmin.obs</parameterId>
+				<locationId>LEB500</locationId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="day" multiplier="1"/>
+				<relativeViewPeriod unit="day" start="-180" end="+180"/>
+				<readWriteMode>read only</readWriteMode>
+			</timeSeriesSet>
+			<!--accumulationTimeSpan unit="hour" multiplier="1"/>
+			<accumulationTimeSpan unit="hour" multiplier="3"/>
+			<accumulationTimeSpan unit="hour" multiplier="6"/>
+			<accumulationTimeSpan unit="hour" multiplier="12"/-->
+			<accumulationTimeSpan unit="day" multiplier="1"/>
+			<!--accumulationTimeSpan unit="day" multiplier="2"/>
+			<accumulationTimeSpan unit="day" multiplier="3"/>
+			<accumulationTimeSpan unit="day" multiplier="7"/-->
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Max s.l. temper. [°C]">
+			<timeSeriesSet>
+				<moduleInstanceId>Interpolate_Temper</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>Tmax.obs</parameterId>
+				<locationId>LEB500</locationId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="day" multiplier="1"/>
+				<relativeViewPeriod unit="day" start="-180" end="+180"/>
+				<readWriteMode>read only</readWriteMode>
+			</timeSeriesSet>
+			<!--accumulationTimeSpan unit="hour" multiplier="1"/>
+			<accumulationTimeSpan unit="hour" multiplier="3"/>
+			<accumulationTimeSpan unit="hour" multiplier="6"/>
+			<accumulationTimeSpan unit="hour" multiplier="12"/-->
+			<accumulationTimeSpan unit="day" multiplier="1"/>
+			<!--accumulationTimeSpan unit="day" multiplier="2"/>
+			<accumulationTimeSpan unit="day" multiplier="3"/>
+			<accumulationTimeSpan unit="day" multiplier="7"/-->
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+	</gridPlotGroup>
+	<gridPlotGroup id="ECMWF" name="ECMWF Seas">
+		<gridPlot id="Precipitation [mm]">
+			<timeSeriesSet>
+				<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>P.forecast</parameterId>
+				<locationId>ECMWF2x2</locationId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="day" multiplier="1"/>	
+				<readWriteMode>read complete forecast</readWriteMode>
+				<ensembleId>ECMWFSeas5</ensembleId>
+				<!--ensembleMemberId>0</ensembleMemberId-->
+			</timeSeriesSet>
+			<accumulationTimeSpan unit="day" multiplier="1"/>
+			<accumulationTimeSpan unit="day" multiplier="10"/>
+			<accumulationTimeSpan unit="day" multiplier="30"/>
+			<accumulationTimeSpan unit="day" multiplier="180"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Precipitation LEB grid[mm]">
+			<timeSeriesSet>
+				<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>P.forecast</parameterId>
+				<locationId>LEB500</locationId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="day" multiplier="1"/>	
+				<readWriteMode>read complete forecast</readWriteMode>
+				<ensembleId>ECMWFSeas5</ensembleId>
+				<!--ensembleMemberId>0</ensembleMemberId-->
+			</timeSeriesSet>
+			<accumulationTimeSpan unit="day" multiplier="1"/>
+			<accumulationTimeSpan unit="day" multiplier="10"/>
+			<accumulationTimeSpan unit="day" multiplier="30"/>
+			<accumulationTimeSpan unit="day" multiplier="180"/>
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Temperature [°C]">
+			<timeSeriesSet>
+				<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>T.forecast</parameterId>
+				<locationId>ECMWF2x2</locationId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="hour" multiplier="6"/>	
+				<readWriteMode>read complete forecast</readWriteMode>
+				<ensembleId>ECMWFSeas5</ensembleId>
+				<!--ensembleMemberId>0</ensembleMemberId-->
+			</timeSeriesSet>
+			<!--accumulationTimeSpan unit="day" multiplier="1"/-->
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>		
+		<gridPlot id="Max temperature [°C]">
+			<timeSeriesSet>
+				<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>Tmax.forecast</parameterId>
+				<locationId>ECMWF2x2</locationId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="day" multiplier="1"/>	
+				<readWriteMode>read complete forecast</readWriteMode>
+				<ensembleId>ECMWFSeas5</ensembleId>
+				<!--ensembleMemberId>0</ensembleMemberId-->
+			</timeSeriesSet>
+			<!--accumulationTimeSpan unit="day" multiplier="1"/-->
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Max temperature LEB grid [°C]">
+			<timeSeriesSet>
+				<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>Tmax.forecast</parameterId>
+				<locationId>LEB500</locationId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="day" multiplier="1"/>	
+				<readWriteMode>read complete forecast</readWriteMode>
+				<ensembleId>ECMWFSeas5</ensembleId>
+				<!--ensembleMemberId>0</ensembleMemberId-->
+			</timeSeriesSet>
+			<!--accumulationTimeSpan unit="day" multiplier="1"/-->
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Min temperature [°C]">
+			<timeSeriesSet>
+				<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>Tmin.forecast</parameterId>
+				<locationId>ECMWF2x2</locationId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="day" multiplier="1"/>	
+				<readWriteMode>read complete forecast</readWriteMode>
+				<ensembleId>ECMWFSeas5</ensembleId>
+				<!--ensembleMemberId>0</ensembleMemberId-->
+			</timeSeriesSet>
+			<!--accumulationTimeSpan unit="day" multiplier="1"/-->
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+		<gridPlot id="Min temperature LEB grid [°C]">
+			<timeSeriesSet>
+				<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>Tmin.forecast</parameterId>
+				<locationId>LEB500</locationId>
+				<timeSeriesType>external forecasting</timeSeriesType>
+				<timeStep unit="day" multiplier="1"/>	
+				<readWriteMode>read complete forecast</readWriteMode>
+				<ensembleId>ECMWFSeas5</ensembleId>
+				<!--ensembleMemberId>0</ensembleMemberId-->
+			</timeSeriesSet>
+			<!--accumulationTimeSpan unit="day" multiplier="1"/-->
+			<contourLinesColor>black</contourLinesColor>
+		</gridPlot>
+	</gridPlotGroup>
+</gridDisplay>

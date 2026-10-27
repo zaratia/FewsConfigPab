@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameterGroups version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
+	<ratingCurveStageParameterId>H.obs</ratingCurveStageParameterId>
+	<ratingCurveDischargeParameterId>Q.obs</ratingCurveDischargeParameterId>
+	<parameterGroup id="Discharge">
+		<parameterType>instantaneous</parameterType>
+		<unit>m3/s</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="Q.forecast" name="Forecasted discharge">
+			<shortName>Q.forecast</shortName>
+		</parameter>
+		<parameter id="Q.simulated" name="Simulated discharge">
+			<shortName>Q.simulated</shortName>
+		</parameter>
+		<parameter id="Qin.simulated" name="Simulated input discharge">
+			<shortName>Qin.simulated</shortName>
+		</parameter>
+		<parameter id="Qout.simulated" name="Simulated output discharge">
+			<shortName>Qout.simulated</shortName>
+		</parameter>
+		<parameter id="Qout.der.simulated" name="Simulated diverted discharge">
+			<shortName>Qout.der.simulated</shortName>
+		</parameter>
+		<parameter id="Qout.res.simulated" name="Simulated released discharge">
+			<shortName>Qout.res.simulated</shortName>
+		</parameter>
+		<parameter id="Qin.forecast" name="Forecast input discharge">
+			<shortName>Qin.forecast</shortName>
+		</parameter>
+		<parameter id="Qout.forecast" name="Forecast output discharge">
+			<shortName>Qout.forecast</shortName>
+		</parameter>
+		<parameter id="Q.sim" name="Simulated discharge">
+			<shortName>Q.sim</shortName>
+		</parameter>
+		<parameter id="Q.obs" name="Observed discharge">
+			<shortName>Q.obs</shortName>
+		</parameter>
+		<parameter id="Q.outflow.sim" name="Simulated reservoir outflow">
+			<shortName>Q.outflow.sim</shortName>
+		</parameter>
+	</parameterGroup>
+	
+	<parameterGroup id="Prec/WE">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="WE.simulated" name="Snow water equivalent [mm]">
+			<shortName>WE.simulated</shortName>
+		</parameter>
+		<parameter id="WE.grid.simulated" name="Grid WE [mm]">
+			<shortName>WE.grid.simulated</shortName>
+		</parameter>
+		<parameter id="P.obs" name="Observed precipitation">
+			<shortName>P.obs</shortName>
+		</parameter>
+	</parameterGroup>
+
+	<parameterGroup id="Soilmoisture">	
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.0001</valueResolution>
+		<parameter id="SM.simulated" name="Simulated soilmoisture [-]">
+			<shortName>SM.simulated</shortName>
+		</parameter>
+	</parameterGroup>
+
+	<parameterGroup id="Storage">	
+		<parameterType>instantaneous</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="STG.simulated" name="Simulated storage [mm]">
+			<shortName>STG.simulated</shortName>
+		</parameter>
+	</parameterGroup>
+
+	<parameterGroup id="Slope">	
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.000001</valueResolution>
+		<parameter id="slope.obs" name="Observed grad. slope">
+			<shortName>slope.obs</shortName>
+		</parameter>
+	</parameterGroup>
+
+	<parameterGroup id="Melt">	
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="melt.simulated" name="Simulated melt [mm]">
+			<shortName>melt.simulated</shortName>
+		</parameter>
+	</parameterGroup>
+	
+	<parameterGroup id="Prec/Snow/Rain">	
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="P.simulated" name="Simulated precipitation [mm]">
+			<shortName>P.simulated</shortName>
+		</parameter>
+		<parameter id="rain.simulated" name="Simulated rain [mm]">
+			<shortName>rain.simulated</shortName>
+		</parameter>
+		<parameter id="snow.simulated" name="Simulated snow [mm]">
+			<shortName>snow.simulated</shortName>
+		</parameter>
+		<parameter id="IRR.simulated" name="Simulated irrigation">
+			<shortName>IRR.simulated</shortName>
+		</parameter>
+		<parameter id="IRR.forecast" name="Forecast irrigation">
+			<shortName>IRR.forecast</shortName>
+		</parameter>
+		<parameter id="TP" name="Grid precipitation">
+			<shortName>TP</shortName>
+		</parameter>
+		<parameter id="P.catchment" name="Catchment precipitation">
+			<shortName>P.catchment</shortName>
+		</parameter>
+		<parameter id="P.forecast" name="Forecasted precipitation">
+			<shortName>P.forecast</shortName>
+		</parameter>
+		<parameter id="Pmean.forecast" name="Forecasted mean precipitation">
+			<shortName>Pmean.forecast</shortName>
+		</parameter>
+		<parameter id="P.det.forecast" name="Forecasted deterministic precipitation">
+			<shortName>P.det..forecast</shortName>
+		</parameter>
+		<parameter id="P50.forecast" name="Forecasted 50% precipitation">
+			<shortName>P50.forecast</shortName>
+		</parameter>
+		<parameter id="P25.forecast" name="Forecasted 25% precipitation">
+			<shortName>P25.forecast</shortName>
+		</parameter>
+		<parameter id="P75.forecast" name="Forecasted 75% precipitation">
+			<shortName>P75.forecast</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Evaporation">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="ETref.obs" name="Reference evaporation">
+			<shortName>ETref.obs</shortName>
+		</parameter>
+		<parameter id="ET.obs" name="Pan evaporation">
+			<shortName>ET.obs</shortName>
+		</parameter>
+		<parameter id="ET.simulated" name="Simulated eff. evaporation">
+			<shortName>ET.simulated</shortName>
+		</parameter>
+		<parameter id="PET.simulated" name="Simulated pot. evaporation">
+			<shortName>PET.simulated</shortName>
+		</parameter>
+		<parameter id="ET.forecast" name="Forecast eff. evaporation">
+			<shortName>ET.forecast</shortName>
+		</parameter>
+		<parameter id="PET.forecast" name="Forecast pot. evaporation">
+			<shortName>PET.forecast</shortName>
+		</parameter>
+		<parameter id="PET.obs" name="Potential Evaporation">
+			<shortName>PET.obs</shortName>
+		</parameter>
+		<parameter id="PET.sim" name="Potential Simulated ET">
+			<shortName>PET.sim</shortName>
+		</parameter>
+		<parameter id="Sat.def" name="Saturation Deficit">
+			<shortName>Sat.def</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Waterdepth">
+		<parameterType>instantaneous</parameterType>
+		<unit>m</unit>
+		<valueResolution>0.001</valueResolution>
+		<parameter id="D.sim" name="Water depth">
+			<shortName>D.sim</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Waterlevel">
+		<parameterType>instantaneous</parameterType>
+		<unit>m</unit>
+		<valueResolution>0.001</valueResolution>
+		<usesDatum>true</usesDatum>
+		<parameter id="H.astro" name="Generated Astro Tide">
+			<shortName>H.astro</shortName>
+		</parameter>
+		<parameter id="H.simulated" name="Simulated waterlevel">
+			<shortName>H.simulated</shortName>
+		</parameter>
+		<parameter id="H.forecast" name="Forecast waterlevel">
+			<shortName>H.forecast</shortName>
+		</parameter>
+		<parameter id="GW.simulated" name="Simulated GW level">
+			<shortName>GW.simulated</shortName>
+		</parameter>
+		<parameter id="GW.forecast" name="Forecast GW level">
+			<shortName>GW.forecast</shortName>
+		</parameter>
+		<parameter id="H.obs" name="Observed waterlevel">
+			<shortName>H.obs</shortName>
+		</parameter>
+	</parameterGroup>
+
+	<parameterGroup id="fraction">
+		<parameterType>instantaneous</parameterType>
+		<unit>m</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="fldf" name="flood depth fraction (PCRGLOB)">
+			<shortName>fldf</shortName>
+		</parameter>
+	</parameterGroup>
+	<!--parameterGroup id="Storage">
+		<parameterType>instantaneous</parameterType>
+		<unit>m3</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="Res.vol.sim" name="Reservoir volume">
+			<shortName>Res.vol</shortName>
+		</parameter>
+	</parameterGroup-->
+
+	<parameterGroup id="Soil storage">
+		<parameterType>instantaneous</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="STO.sim" name="Simulated water storage">
+			<shortName>STO.sim</shortName>
+		</parameter>
+		<parameter id="STO.obs" name="Observed water storage">
+			<shortName>STO.obs</shortName>
+		</parameter>
+		<parameter id="STO.simulated" name="Simulated surface storage">
+			<shortName>STO.simulated</shortName>
+		</parameter>
+		<parameter id="STO.forecast" name="Forecast surface storage">
+			<shortName>STO.forecast</shortName>
+		</parameter>
+		<parameter id="STO.75.forecast" name="75% Forecast surface storage">
+			<shortName>STO.75.forecast</shortName>
+		</parameter>
+		<parameter id="STO.25.forecast" name="25% Forecast surface storage">
+			<shortName>STO.25.forecast</shortName>
+		</parameter>
+		<parameter id="STO.50.forecast" name="50% Forecast surface storage">
+			<shortName>STO.50.forecast</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Solar Duration">
+		<parameterType>accumulative</parameterType>
+		<unit>hours</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="SOL.obs" name="Observed solar duration">
+			<shortName>SOL.obs</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Solar Radiation">
+		<parameterType>instantaneous</parameterType>
+		<unit>W/m2</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="Rs.obs" name="Observed solar radiation">
+			<shortName>Rs.obs</shortName>
+		</parameter>
+		<parameter id="Rso.obs" name="Clear sky solar radiation">
+			<shortName>Rso.obs</shortName>
+		</parameter>
+		<parameter id="Rnl.obs" name="Observed net long wave radiation">
+			<shortName>Rnl.obs</shortName>
+		</parameter>
+		<parameter id="Rn.obs" name="Observed net short - long wave radiation">
+			<shortName>Rn.obs</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Wind direction">
+		<parameterType>instantaneous</parameterType>
+		<unit>degrees</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="Wind.dir" name="Wind speed direction">
+			<shortName>Wind.dir</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Wind speed">
+		<parameterType>instantaneous</parameterType>
+		<unit>m/s</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="WS.obs" name="Observed wind speed">
+			<shortName>WS.obs</shortName>
+		</parameter>
+		<parameter id="Wind.speed" name="Observed wind speed">
+			<shortName>Wind.speed</shortName>
+		</parameter>
+		<parameter id="WS.u.forecast" name="WS.u.forecast">
+			<shortName>WS.u.forecast</shortName>
+		</parameter>
+		<parameter id="WS.v.forecast" name="WS.v.forecast">
+			<shortName>WS.v.forecast</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Temperature">
+		<parameterType>instantaneous</parameterType>
+		<unit>oC</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="T.obs" name="Observed temperature">
+			<shortName>T.obs</shortName>
+		</parameter>
+		<parameter id="T.simulated" name="Simulated temperature">
+			<shortName>T.simulated</shortName>
+		</parameter>
+		<parameter id="T.forecast" name="GFS forecasted temperature">
+			<shortName>T.forecast</shortName>
+		</parameter>
+		<parameter id="Tmax.forecast" name="Forecasted max temperature">
+			<shortName>Tmax.forecast</shortName>
+		</parameter>
+		<parameter id="Tmin.forecast" name="Forecasted min temperature">
+			<shortName>Tmin.forecast</shortName>
+		</parameter>
+		<parameter id="Tmin.obs" name="Observed min temperature">
+			<shortName>Tmin.obs</shortName>
+		</parameter>
+		<parameter id="Tmax.obs" name="Observed max temperature">
+			<shortName>Tmax.obs</shortName>
+		</parameter>
+		<parameter id="TAmin" name="Grid min temperature">
+			<shortName>TAmin</shortName>
+		</parameter>
+		<parameter id="TAmax" name="Grid max temperature">
+			<shortName>TAmax</shortName>
+		</parameter>
+		<parameter id="Tmean.obs" name="Observed avg temperature">
+			<shortName>Tmean.obs</shortName>
+		</parameter>
+		<parameter id="intercept.obs" name="Observed grad. intercept">
+			<shortName>intercept.obs</shortName>
+		</parameter>
+	</parameterGroup>
+	
+	<parameterGroup id="Relative humidity">
+		<parameterType>instantaneous</parameterType>
+		<unit>%</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="RH.obs" name="Observed relative humidity">
+			<shortName>RH.obs</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Vapour pressure">
+		<parameterType>instantaneous</parameterType>
+		<unit>kPa</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="ea.obs" name="Observed actual vapour pressure">
+			<shortName>ea.obs</shortName>
+		</parameter>
+		<parameter id="es.obs" name="Observed saturation vapour pressure">
+			<shortName>es.obs</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Pressure">
+		<parameterType>instantaneous</parameterType>
+		<unit>Pa</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="Pres.obs" name="Observed air pressure">
+			<shortName>Pres.obs</shortName>
+		</parameter>
+		<parameter id="AirPressure.forecast" name="AirPressure.forecast">
+			<shortName>AirPressure.forecast</shortName>
+		</parameter>
+		<parameter id="Pressure.msl" name="Pressure.msl">
+			<shortName>Pressure.msl</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Time">
+		<parameterType>instantaneous</parameterType>
+		<unit>s</unit>
+		<valueResolution>1</valueResolution>
+		<parameter id="Time.forecast.offset" name="Time Offset (Forecast)">
+			<shortName>Time.forecast.offset</shortName>
+		</parameter>
+		<parameter id="Time.forecast.travel" name="Travel Time (Forecast)">
+			<shortName>Time.forecast.travel</shortName>
+		</parameter>
+		<parameter id="Time.peak" name="Time to Peak">
+			<shortName>Time.peak</shortName>
+		</parameter>
+		<parameter id="Time.threshold" name="Time to Threshold">
+			<shortName>Time.threshold</shortName>
+		</parameter>
+		<parameter id="Time.event" name="Event Duration">
+			<shortName>Time.event</shortName>
+		</parameter>
+		<parameter id="Time.start" name="Event Start">
+			<shortName>Time.start</shortName>
+		</parameter>
+		<parameter id="Time.end" name="Event End">
+			<shortName>Time.end</shortName>
+		</parameter>
+		<parameter id="Time.diff" name="Time Difference">
+			<shortName>Time.diff</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Impacts">
+		<parameterType>instantaneous</parameterType>
+		<unit>1000 Rs</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="damage_Residential_singlestorey_structure" name="Damage to Residential Singlestorey Structure">
+			<shortName>Residential_singlestorey_structure</shortName>
+		</parameter>
+		<parameter id="Total_damage" name="Total damage">
+			<shortName>Total damage</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Impact2people">
+		<parameterType>instantaneous</parameterType>
+		<unit>Person</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="PE_affected" name="Number of affected people">
+			<shortName>PE_affected</shortName>
+		</parameter>
+	</parameterGroup>
+</parameterGroups>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<!--Aggregazione giornaliera-->
+	<variable>
+		<variableId>Tin</variableId>
+		<timeSeriesSet>
+		  <moduleInstanceId>Import_Station</moduleInstanceId>
+		  <valueType>scalar</valueType>
+		  <parameterId>T.obs</parameterId>
+		  <locationSetId>arpav_stations</locationSetId>
+		  <timeSeriesType>external historical</timeSeriesType>
+		  <timeStep unit="hour" multiplier="1"/>
+		  <relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true" endOverrulable="true"/>
+		  <readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tout</variableId>
+		<timeSeriesSet>
+		  <moduleInstanceId>Import_Station</moduleInstanceId>
+		  <valueType>scalar</valueType>
+		  <parameterId>Tmean.obs</parameterId>
+		  <locationSetId>arpav_stations</locationSetId>
+		  <timeSeriesType>external historical</timeSeriesType>
+		  <timeStep unit="day" multiplier="1"/>
+		  <relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true" endOverrulable="true"/>
+		  <readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>	
+	<variable>
+		<variableId>Tout2</variableId>
+		<timeSeriesSet>
+		  <moduleInstanceId>Import_Station</moduleInstanceId>
+		  <valueType>scalar</valueType>
+		  <parameterId>Tmin.obs</parameterId>
+		  <locationSetId>arpav_stations</locationSetId>
+		  <timeSeriesType>external historical</timeSeriesType>
+		  <timeStep unit="day" multiplier="1"/>
+		  <relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true" endOverrulable="true"/>
+		  <readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>	
+	<variable>
+		<variableId>Tout3</variableId>
+		<timeSeriesSet>
+		  <moduleInstanceId>Import_Station</moduleInstanceId>
+		  <valueType>scalar</valueType>
+		  <parameterId>Tmax.obs</parameterId>
+		  <locationSetId>arpav_stations</locationSetId>
+		  <timeSeriesType>external historical</timeSeriesType>
+		  <timeStep unit="day" multiplier="1"/>
+		  <relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true" endOverrulable="true"/>
+		  <readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>	
+	<variable>
+		<variableId>Pin</variableId>
+		<timeSeriesSet>
+		  <moduleInstanceId>Import_Station</moduleInstanceId>
+		  <valueType>scalar</valueType>
+		  <parameterId>P.obs</parameterId>
+		  <locationSetId>arpav_stations</locationSetId>
+		  <timeSeriesType>external historical</timeSeriesType>
+		  <timeStep unit="minute" multiplier="5"/>
+		  <relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true" endOverrulable="true"/>
+		  <readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Pout</variableId>
+		<timeSeriesSet>
+		  <moduleInstanceId>Import_Station</moduleInstanceId>
+		  <valueType>scalar</valueType>
+		  <parameterId>P.obs</parameterId>
+		  <locationSetId>arpav_stations</locationSetId>
+		  <timeSeriesType>external historical</timeSeriesType>
+		  <timeStep unit="day" multiplier="1"/>
+		  <relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true" endOverrulable="true"/>
+		  <readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>	
+	
+	<transformation id="AggregationMeanT">
+		<statisticsSerial>
+			<mean>
+				<inputVariable>
+					<variableId>Tin</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tout</variableId>
+				</outputVariable>
+			</mean>
+		</statisticsSerial>
+	</transformation>
+	
+	<transformation id="TdailyMin">
+		<statisticsSerial>
+			<min>
+				<inputVariable>
+					<variableId>Tin</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tout2</variableId>
+				</outputVariable>
+			</min>
+		</statisticsSerial>
+	</transformation>
+	
+	<transformation id="TdailyMax">
+		<statisticsSerial>
+			<max>
+				<inputVariable>
+					<variableId>Tin</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tout3</variableId>
+				</outputVariable>
+			</max>
+		</statisticsSerial>
+	</transformation>
+	
+	<transformation id="AggregationDayP">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Pin</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Pout</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	
+</transformationModule>

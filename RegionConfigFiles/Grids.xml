@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grids xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/grids.xsd">
+	<regular locationId="GFS_world">
+		<rows>361</rows>
+		<columns>720</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>0</x>
+			<y>90</y>
+			<z>0</z>
+		</firstCellCenter>
+		<xCellSize>0.5</xCellSize>
+		<yCellSize>0.5</yCellSize>
+	</regular>
+	<regular locationId="ECMWF">
+		<rows>7</rows>
+		<columns>14</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>4</x>
+			<y>49</y>
+			<z>0</z>
+		</firstCellCenter>
+		<xCellSize>1.0</xCellSize>
+		<yCellSize>1.0</yCellSize>		
+	</regular>
+	<regular locationId="ECMWF2x2">
+		<rows>2</rows>
+		<columns>2</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>11</x>
+			<y>46</y>
+			<z>0</z>
+		</firstCellCenter>
+		<xCellSize>1.0</xCellSize>
+		<yCellSize>1.0</yCellSize>		
+	</regular>
+	<regular locationId="GFS">
+		<rows>100</rows>
+		<columns>180</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-15</x>
+			<y>60</y>
+			<z>0</z>
+		</firstCellCenter>
+		<xCellSize>0.25</xCellSize>
+		<yCellSize>0.25</yCellSize>
+	</regular>
+	<regular locationId="IMERG_world">
+		<rows>1800</rows>
+		<columns>3600</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-179.95</x>
+			<y>89.95</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.1</xCellSize>
+		<yCellSize>0.1</yCellSize>
+	</regular>
+	<regular locationId="IMERG">
+		<rows>250</rows>
+		<columns>450</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-15</x>
+			<y>60</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.1</xCellSize>
+		<yCellSize>0.1</yCellSize>
+	</regular>
+	
+	<regular locationId="BZDEMTOPO60">
+		<rows>416</rows>
+		<columns>680</columns>
+		<geoDatum>EPSG:32632</geoDatum>		
+		<firstCellCenter>
+			<x>598097.0</x>
+			<y>5221862.0</y>
+		</firstCellCenter>
+		<xCellSize>250</xCellSize>
+		<yCellSize>250</yCellSize>
+		<zMapLayerName>demaa_250_new.asc</zMapLayerName>
+	</regular>
+</grids>

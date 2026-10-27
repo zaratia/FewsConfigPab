@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Delft FEWS Po-->
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<map internalParameter="P.forecast" internalLocation="ECMWF2x2" externalParameter="228" externalLocation="ECMWF2x2"/>
+	<map internalParameter="T.forecast" internalLocation="ECMWF2x2" externalParameter="167" externalLocation="ECMWF2x2"/>
+	<map internalParameter="Tmin.forecast" internalLocation="ECMWF2x2" externalParameter="52" externalLocation="ECMWF2x2"/>
+	<map internalParameter="Tmax.forecast" internalLocation="ECMWF2x2" externalParameter="51" externalLocation="ECMWF2x2"/>
+	
+</idMap>

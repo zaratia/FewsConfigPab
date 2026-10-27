@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<generalAdapterRun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd" xmlns="http://www.wldelft.nl/fews">
+	<general>
+		<description>Irriweb model</description>
+		<rootDir>%REGION_HOME%/Modules/leb-system_2.1</rootDir>
+		<workDir>%ROOT_DIR%</workDir>
+		<exportDir>%ROOT_DIR%/data/IN/states</exportDir>
+		<exportDataSetDir>%ROOT_DIR%/</exportDataSetDir>
+		<exportIdMap>IdExportIrriwebForecast</exportIdMap>
+		<exportUnitConversionsId>ExportIrriweb</exportUnitConversionsId>
+		<importDir>%ROOT_DIR%/data/OUT/states</importDir>
+		<importIdMap>IdImportIrriwebForecast</importIdMap>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/log/diag.xml</diagnosticFile>
+		<!--missVal>NaN</missVal>
+		<timeZone>
+			<timeZoneName>$TIMEZONE$</timeZoneName>
+		</timeZone>
+		<startDateTimeFormat>yyyy-MM-dd hh:mm:ss</startDateTimeFormat>
+		<modelTimeStep id="$DAY_TIMESTEP$"/-->
+	</general>
+	<activities>
+		
+		<!-- Clear output folder -->
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/data/OUT/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/data/OUT/states/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/data/OUT/csv/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/data/OUT/netcdf/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+
+		<!-- Export state -->
+		<exportActivities>
+			<exportStateActivity>
+				<moduleInstanceId>Spyictop_Historic</moduleInstanceId>
+				<stateExportDir>%ROOT_DIR%/data/IN/states</stateExportDir>
+				<stateConfigFile>%ROOT_DIR%/data/IN/states/stateInfo.xml</stateConfigFile>
+				<stateLocations type="directory">
+					<stateLocation>
+						<readLocation>%ROOT_DIR%/data/IN/states</readLocation>
+						<writeLocation>%ROOT_DIR%/data/OUT/states</writeLocation>
+					</stateLocation>
+				</stateLocations>
+				<stateSelection>
+					<warmState>
+						<stateSearchPeriod unit="day" start="-100" end="-1"/>
+					</warmState>
+				</stateSelection>
+			</exportStateActivity>	
+			<!-- Export meteo input NETCDF -->
+			<exportNetcdfActivity>
+				<exportFile>%ROOT_DIR%/data/IN/in_TP.nc</exportFile>
+				<writeRealizationDimension>false</writeRealizationDimension>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>P.forecast</parameterId>
+						<locationId>LEB500</locationId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>		
+			<exportNetcdfActivity>
+				<exportFile>%ROOT_DIR%/data/IN/in_TAmin.nc</exportFile>
+				<writeRealizationDimension>false</writeRealizationDimension>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Tmin.forecast</parameterId>
+						<locationId>LEB500</locationId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>	
+			<exportNetcdfActivity>
+				<exportFile>%ROOT_DIR%/data/IN/in_TAmax.nc</exportFile>
+				<writeRealizationDimension>false</writeRealizationDimension>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>Import_ECMWF_grib</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>Tmax.forecast</parameterId>
+						<locationId>LEB500</locationId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<relativeViewPeriod unit="day" start="-365" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>	
+			<exportRunFileActivity>
+				<exportFile>%ROOT_DIR%/run_info_.xml</exportFile>
+			</exportRunFileActivity>			
+		</exportActivities>
+
+		<!-- EXECUTE ACTIVITIES -->
+		<executeActivities>			<!---->
+			<executeActivity>
+				<command>
+					<executable>%ROOT_DIR%/Scripts/activate.bat</executable>
+				</command>
+				<timeOut>60000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>		<!---->
+			<executeActivity>
+				<command>
+					<executable>%ROOT_DIR%/runpy.bat</executable>
+				</command>
+				<timeOut>60000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>		<!---->
+			<executeActivity>
+				<command>
+					<executable>%ROOT_DIR%/Scripts/deactivate.bat</executable>
+				</command>
+				<timeOut>60000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>		
+		<!-- IMPORT ACTIVITIES -->
+		<importActivities>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/data/OUT/netcdf/basins.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RO.forecast</parameterId>
+						<locationSetId>centroidi_distretti</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>ET.forecast</parameterId>
+						<locationSetId>centroidi_distretti</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PET.forecast</parameterId>
+						<locationSetId>centroidi_distretti</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>IN.forecast</parameterId>
+						<locationSetId>centroidi_distretti</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>H.forecast</parameterId>
+						<locationSetId>centroidi_distretti</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>GW.forecast</parameterId>
+						<locationSetId>centroidi_distretti</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>P.forecast</parameterId>
+						<locationSetId>centroidi_distretti</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>IRR.forecast</parameterId>
+						<locationSetId>centroidi_distretti</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>STO.forecast</parameterId>
+						<locationSetId>centroidi_distretti</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+
+			<!-- channels-->			
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/data/OUT/netcdf/channels.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>H.forecast</parameterId>
+						<locationSetId>canali</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Qin.forecast</parameterId>
+						<locationSetId>canali</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+					<!--timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Qout.forecast</parameterId>
+						<locationSetId>canali</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet-->
+				</timeSeriesSets>
+			</importNetcdfActivity>
+
+			<!--importTimeSeriesActivity>
+				<importFile>%ROOT_DIR%/data/OUT/out_Qb.xml</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>IrriwebForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>Qb.forecast</parameterId>
+						<locationSetId>centroidi_distretti</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day" multiplier="1"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>ECMWFSeas5</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importTimeSeriesActivity-->
+		</importActivities>
+	</activities>
+</generalAdapterRun>
