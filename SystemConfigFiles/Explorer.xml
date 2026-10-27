@@ -3,7 +3,7 @@
 	<systemInformation>
 		<description>FEWS Demo</description>
 		<systemCaption>$EXPLORER_SYSTEMCAPTION$</systemCaption>
-		<systemHelpFile>%FEWSDIR%/Products/Help.pdf</systemHelpFile>
+		<!--systemHelpFile>%FEWSDIR%/Products/Help.pdf</systemHelpFile-->
 	</systemInformation>
 	<map>
 		<geoDatum>WGS 1984</geoDatum>
@@ -109,16 +109,6 @@
 				<visible>true</visible>
 				<lineColor>blue</lineColor>
 				<!--linePattern>solid</linePattern-->
-				<!--fillRgbColor>F7F5B8</fillRgbColor-->
-				<!--fillRgbColor>FFFFFF</fillRgbColor-->
-				<!--opaquenessPercentage>40</opaquenessPercentage-->
-			</esriShapeLayer>
-			<esriShapeLayer id="Reticolo idrografico">
-				<description>Distretti serviti</description>
-				<file>grafo_elemento_idrico.shp</file>
-				<geoDatum>EPSG:3003</geoDatum>
-				<visible>true</visible>
-				<lineColor>light blue</lineColor>
 				<!--fillRgbColor>F7F5B8</fillRgbColor-->
 				<!--fillRgbColor>FFFFFF</fillRgbColor-->
 				<!--opaquenessPercentage>40</opaquenessPercentage-->
